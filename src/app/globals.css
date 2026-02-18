@@ -89,7 +89,7 @@ h1, h2, h3 {
 /* Mobile */
 @media (max-width: 640px) {
   .animate-marquee {
-    animation-duration: 0.1s; /* mobile fast */
+    animation-duration: 8s; /* mobile fast */
   }
 }
 
