@@ -76,7 +76,7 @@ h1, h2, h3 {
 .animate-marquee {
   display: flex;
   width: 100%;
-  animation: marquee 20s linear infinite; /* desktop speed */
+  animation: marquee 40s linear infinite; /* desktop speed */
 }
 
 /* Tablet */

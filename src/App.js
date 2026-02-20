@@ -1,18 +1,19 @@
-import { useEffect, useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import '@/App.css';
-import Homepage from '@/pages/Homepage';
+// import { useEffect, useState } from 'react';
+// import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// import '@/App.css';
+// import Homepage from '@/pages/Homepage';
 
-function App() {
-  return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
-  );
-}
+// function App() {
+//   return (
+//     <div className="App">
+//       <BrowserRouter>
+//         <Routes>
+//           <Route path="/" element={<Homepage />} />
+//         </Routes>
+//       </BrowserRouter>
+//     </div>
+//   );
+// }
 
-export default App;
+// export default App;
+

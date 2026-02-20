@@ -18,7 +18,7 @@ const Navbar = () => {
         isScrolled ? "bg-[#EF6192] shadow-md" : "bg-transparent"
       }`}
     >
-      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 md:px-10">
+      <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 md:px-10">
         {/* Top Utility Bar (hidden on mobile, but we'll show in mobile menu) */}
         <div className="hidden md:flex justify-end items-center py-2">
           <div
@@ -42,7 +42,7 @@ const Navbar = () => {
               alt="logo"
               className="h-12 md:h-14 w-auto object-contain"
             />
-            <div className="hidden md:block h-7 w-[2px] bg-white/40 rotate-[20deg]" />
+            {/* <div className="hidden md:block h-7 w-[2px] bg-white/40 " /> */}
           </div>
 
           {/* DESKTOP NAV */}

@@ -153,7 +153,16 @@ const Hero = () => {
           }
         }
         .animate-marquee {
-          animation: marquee 60s linear infinite;
+          animation: marquee 20s linear infinite;
+        }
+        @media (max-width: 1024px) {
+          .animate-marquee {
+          animation-duration: 14s;
+        }
+        @media (max-width: 640px) {
+          .animate-marquee {
+          animation-duration: 8s; 
+        }
         }
       `}</style>
     </section>

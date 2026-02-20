@@ -1,145 +1,117 @@
 "use client";
-
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Testimonials = () => {
   const testimonials = [
     {
       company: "Secret Escapes",
-      quote:
-        "Working with 5th Element has elevated our acquisition strategy significantly. Their data-driven approach and optimization capabilities have delivered strong results across multiple markets, helping us scale efficiently.",
+      quote: "Working with 5th Element has elevated our acquisition strategy significantly. Their data-driven approach and optimization capabilities have delivered strong results.",
       author: "Daniel Reeves",
-      role: "Director of Digital Growth, Secret Escapes",
+      role: "Director of Digital Growth"
     },
     {
       company: "Autotrader",
-      quote:
-        "5th Element’s platform adapts seamlessly to our pace of innovation. Their advanced technology allows us to process large volumes of user signals and convert them into meaningful customer actions.",
+      quote: "5th Element’s platform adapts seamlessly to our pace of innovation. Their technology allows us to process large volumes of user signals efficiently.",
       author: "Chris Morgan",
-      role: "Head of Mobile Marketing, Autotraderнщrader",
+      role: "Head of Mobile Marketing"
     },
     {
       company: "Brand XYZ",
-      quote:
-        "The team helped us uncover new revenue by improving retargeting with AI-led performance insights.",
+      quote: "The team helped us uncover new revenue by improving retargeting with AI-led performance insights and deep learning optimization.",
       author: "John Carter",
-      role: "Growth Lead",
-    },
-    {
-      company: "Fashion Hub",
-      quote:
-        "We’ve seen a measurable uplift in both engagement and conversions. The creative excellence and strategic support from 5th Element have helped us expand into new regions confidently.",
-      author: "Olivia Bennett",
-      role: "Global Marketing Director, Fashion Hub",
-    },
+      role: "Growth Lead"
+    }
   ];
 
   const [index, setIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
 
   const next = () => {
+    setDirection(1);
     setIndex((prev) => (prev + 1) % testimonials.length);
   };
 
   const prev = () => {
+    setDirection(-1);
     setIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
-  const active = testimonials[index];
-  const nextItem = testimonials[(index + 1) % testimonials.length];
+  const nextIndex = (index + 1) % testimonials.length;
 
   return (
-    <section className="bg-[#f5f5f5] py-28">
-      <div className="max-w-[1200px] mx-auto px-6">
-        {/* Top Bar */}
-        <div className="flex items-center justify-between mb-10">
-          <p className="text-[11px] tracking-[0.3em] uppercase font-bold text-black">
+    /* Fix: height: auto rakha hai taaki extra space na bache niche */
+    <section className="bg-[#f5f5f5] py-20 md:py-28 w-full h-auto overflow-hidden">
+      <div className="max-w-[1600px] mx-auto px-10 md:px-20">
+
+        {/* --- Header: Clean Alignment --- */}
+        <div className="flex items-center justify-between mb-12 border-b border-black/5 pb-6">
+          <p className="text-[11px] tracking-[0.4em] uppercase font-[900] text-black">
             How we work
           </p>
 
-          {/* Progress + Arrows */}
           <div className="flex items-center gap-6">
-            <div className="w-[200px] h-[2px] bg-gray-300 relative">
-              <div
-                className="absolute top-0 left-0 h-full bg-red-500 transition-all"
-                style={{
-                  width: `${((index + 1) / testimonials.length) * 100}%`,
-                }}
-              />
-            </div>
-
-            <div className="flex items-center gap-3 text-sm font-semibold">
-              <button
-                onClick={prev}
-                className="w-8 h-8 rounded-full border border-black text-black flex items-center justify-center transition hover:bg-black/5"
-              >
+            <span className="text-[12px] font-bold tracking-widest text-black/40">
+              0{index + 1} / 0{testimonials.length}
+            </span>
+            <div className="flex gap-2">
+              <button onClick={prev} className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center hover:bg-[#e30613] transition-all">
                 <ArrowLeft size={16} />
               </button>
-
-              <span className="text-black">
-                {index + 1} / {testimonials.length}
-              </span>
-
-              <button
-                onClick={next}
-                className="w-8 h-8 rounded-full border border-black text-black flex items-center justify-center transition hover:bg-black/5"
-              >
+              <button onClick={next} className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center hover:bg-[#e30613] transition-all">
                 <ArrowRight size={16} />
               </button>
             </div>
           </div>
         </div>
 
-        {/* Content Area */}
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          {/* LEFT ACTIVE */}
-          <AnimatePresence mode="wait">
+        {/* --- Main Content: Grid for Desktop 2-Card View --- */}
+        <div className="relative">
+          <AnimatePresence initial={false} custom={direction} mode="wait">
             <motion.div
-              key={active.quote}
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -40 }}
-              transition={{ duration: 0.5 }}
+              key={index}
+              custom={direction}
+              initial={{ x: direction > 0 ? 50 : -50, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: direction < 0 ? 50 : -50, opacity: 0 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              /* Fix: md:grid-cols-2 ensures 2 cards on desktop */
+              className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24"
             >
-              <p className="text-sm mb-4 font-semibold text-black">
-                {active.company}
-              </p>
-
-              <p className="text-[20px] leading-relaxed text-black mb-8">
-                "{active.quote}"
-              </p>
-
-              <div className="mb-8">
-                <p className="font-semibold text-black">{active.author}</p>
-                <p className="text-sm text-gray-500">{active.role}</p>
+              {/* Active Card */}
+              <div className="flex flex-col justify-between">
+                <div>
+                  <p className="text-[13px] font-black uppercase tracking-widest text-[#e30613] mb-6">
+                    {testimonials[index].company}
+                  </p>
+                  <h2 className="text-[24px] md:text-[34px] font-bold leading-[1.25] text-black tracking-tight mb-8">
+                    "{testimonials[index].quote}"
+                  </h2>
+                </div>
+                <div>
+                  <p className="font-black text-black uppercase text-[11px] tracking-wider">{testimonials[index].author}</p>
+                  <p className="text-[11px] text-black/50 font-medium">{testimonials[index].role}</p>
+                </div>
               </div>
 
-              <button className="bg-[#e30613] text-white px-6 py-3 rounded-full text-sm font-semibold hover:opacity-90">
-                Read more
-              </button>
+              {/* Faded Next Card: Desktop Only */}
+              <div className="hidden md:flex flex-col justify-between opacity-20 select-none grayscale">
+                <div>
+                  <p className="text-[13px] font-black uppercase tracking-widest text-black mb-6">
+                    {testimonials[nextIndex].company}
+                  </p>
+                  <h2 className="text-[24px] md:text-[34px] font-bold leading-[1.25] text-black tracking-tight mb-8">
+                    "{testimonials[nextIndex].quote}"
+                  </h2>
+                </div>
+                <div>
+                  <p className="font-black text-black uppercase text-[11px] tracking-wider">{testimonials[nextIndex].author}</p>
+                  <p className="text-[11px] text-black/50 font-medium">{testimonials[nextIndex].role}</p>
+                </div>
+              </div>
             </motion.div>
           </AnimatePresence>
-
-          {/* RIGHT FADED PREVIEW */}
-          <div className="opacity-40">
-            <p className="text-sm mb-4 font-semibold text-gray-400">
-              {nextItem.company}
-            </p>
-
-            <p className="text-[18px] leading-relaxed text-gray-400">
-              "{nextItem.quote.substring(0, 140)}..."
-            </p>
-
-            <div className="mt-6">
-              <p className="font-semibold text-gray-400">{nextItem.author}</p>
-              <p className="text-sm text-gray-400">{nextItem.role}</p>
-            </div>
-
-            <button className="mt-8 px-6 py-3 rounded-full bg-red-200 text-white text-sm">
-              Read more
-            </button>
-          </div>
         </div>
       </div>
     </section>
@@ -147,6 +119,11 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
+
+
+
+
+
 
 // "use client";
 

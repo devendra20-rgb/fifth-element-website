@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-3 mb-6">
               <img src="/5th-eleLogo.png" className="h-12 md:h-14" />
-              <span className="text-xl text-[#e30613] font-bold">/</span>
+              {/* <span className="text-xl text-[#e30613] font-bold">/</span> */}
             </div>
 
             <p className="text-[#e30613] text-lg font-medium mb-6 leading-snug">
@@ -197,14 +197,26 @@ const WorldClock = ({ city, offset }) => {
       <div className="relative w-14 h-14 rounded-full border border-white/30 flex items-center justify-center">
         {/* hour hand */}
         <div
-          className="absolute w-[2px] h-4 bg-white origin-bottom"
-          style={{ transform: `rotate(${hourDeg}deg)` }}
+          className="absolute w-[2px] h-4 bg-white"
+          style={{
+            transform: `rotate(${hourDeg}deg)`,
+            transformOrigin: "center bottom",
+            bottom: "50%",
+            left: "50%",
+            translate: "-50% 0",
+          }}
         />
 
         {/* minute hand */}
         <div
-          className="absolute w-[1.5px] h-5 bg-white origin-bottom"
-          style={{ transform: `rotate(${minDeg}deg)` }}
+          className="absolute w-[1.5px] h-5 bg-white"
+          style={{
+            transform: `rotate(${minDeg}deg)`,
+            transformOrigin: "center bottom",
+            bottom: "50%",
+            left: "50%",
+            translate: "-50% 0",
+          }}
         />
 
         {/* center dot */}
