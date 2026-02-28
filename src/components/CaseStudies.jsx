@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import Link from 'next/link';
 
 const CaseStudies = () => {
   const caseStudies = [
@@ -53,9 +54,11 @@ const CaseStudies = () => {
             No matter where you operate, we help you expand reach and results
             online.
           </p>
-          <button className="border border-gray-200 px-8 py-3 rounded-full text-[12px] font-black uppercase tracking-widest text-[#e30613] hover:bg-gray-50 transition">
-            Explore case studies
-          </button>
+          <Link href="/case-studies">
+            <button className="border border-gray-200 px-8 py-3 rounded-full text-[12px] font-black uppercase tracking-widest text-[#e30613] hover:bg-gray-50 transition">
+              Explore case studies
+            </button>
+          </Link>
         </motion.div>
 
         {/* Asymmetric Grid Layout - Exact Image 18 Alignment */}
