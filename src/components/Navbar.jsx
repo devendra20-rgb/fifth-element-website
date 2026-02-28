@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -20,28 +21,30 @@ const Navbar = () => {
     >
       <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 md:px-10">
         {/* Top Utility Bar (hidden on mobile, but we'll show in mobile menu) */}
-        <div className="hidden md:flex justify-end items-center py-2">
+        {/* <div className="hidden md:flex justify-end items-center py-2">
           <div
             className={`flex items-center gap-6 text-[11px] font-bold uppercase tracking-[0.15em] ${
               isScrolled ? "text-white/80" : "text-white/60"
             }`}
           >
-            <a href="#">About Us</a>
+            <a href="about-us">About Us</a>
             <a href="#">Newsletter</a>
             <a href="#">Opt Out</a>
-            <a href="#">Privacy Center</a>
+            <a href="privacy-center">Privacy Center</a>
           </div>
-        </div>
+        </div> */}
 
         {/* Main Nav Row */}
         <div className="flex items-center justify-between py-4 md:py-5">
           {/* LEFT LOGO */}
           <div className="flex items-center gap-4">
-            <img
-              src="/5th-eleLogo.png"
-              alt="logo"
-              className="h-12 md:h-14 w-auto object-contain"
-            />
+            <Link href="/" className="transition-opacity hover:opacity-90">
+              <img
+                src="/5th-eleLogo.png"
+                alt="Fifth Element Logo"
+                className="h-12 md:h-14 w-auto object-contain cursor-pointer"
+              />
+            </Link>
             {/* <div className="hidden md:block h-7 w-[2px] bg-white/40 " /> */}
           </div>
 
@@ -51,16 +54,27 @@ const Navbar = () => {
               isScrolled ? "text-white" : "text-white"
             }`}
           >
-            <div className="flex items-center gap-1 cursor-pointer hover:text-white/80 transition">
+            {/* <div className="flex items-center gap-1 cursor-pointer hover:text-white/80 transition">
               Technology <ChevronDown size={14} />
             </div>
             <div className="flex items-center gap-1 cursor-pointer hover:text-white/80 transition">
               Offer <ChevronDown size={14} />
-            </div>
-            <a href="#" className="hover:text-white/80 transition">Case Studies</a>
-            <a href="#" className="hover:text-white/80 transition">Resources</a>
-            <a href="#" className="hover:text-white/80 transition">Blog</a>
-            <a href="#" className="hover:text-white/80 transition">Careers</a>
+            </div> */}
+            <a href="services" className="hover:text-white/80 transition">
+              Services
+            </a>
+            <a href="case-studies" className="hover:text-white/80 transition">
+              Case Studies
+            </a>
+            <a href="gallery" className="hover:text-white/80 transition">
+              Gallery
+            </a>
+            <a href="about-us" className="hover:text-white/80 transition">
+              About Us
+            </a>
+            <a href="careers" className="hover:text-white/80 transition">
+              Careers
+            </a>
           </nav>
 
           {/* RIGHT SIDE */}
@@ -100,31 +114,54 @@ const Navbar = () => {
           {/* Menu Content - centered */}
           <div className="flex-grow flex flex-col items-center justify-center px-6 space-y-8 text-center">
             {/* Top Utility Links - mobile pe dikhao */}
-            <div className="flex flex-col gap-4 text-white/80 text-lg font-medium mb-8">
+            {/* <div className="flex flex-col gap-4 text-white/80 text-lg font-medium mb-8">
               <a href="#" onClick={() => setOpen(false)}>About Us</a>
               <a href="#" onClick={() => setOpen(false)}>Newsletter</a>
               <a href="#" onClick={() => setOpen(false)}>Opt Out</a>
               <a href="#" onClick={() => setOpen(false)}>Privacy Center</a>
             </div>
 
-            {/* Main Menu Links */}
             <a href="#" className="text-white text-2xl font-bold" onClick={() => setOpen(false)}>
               Technology
             </a>
             <a href="#" className="text-white text-2xl font-bold" onClick={() => setOpen(false)}>
               Offer
+            </a> */}
+            <a
+              href="services"
+              className="text-white text-2xl font-bold"
+              onClick={() => setOpen(false)}
+            >
+              Services
             </a>
-            <a href="#" className="text-white text-2xl font-bold" onClick={() => setOpen(false)}>
+            <a
+              href="case-studies"
+              className="text-white text-2xl font-bold"
+              onClick={() => setOpen(false)}
+            >
               Case Studies
             </a>
-            <a href="#" className="text-white text-2xl font-bold" onClick={() => setOpen(false)}>
-              Resources
+            <a
+              href="about-us"
+              className="text-white text-2xl font-bold"
+              onClick={() => setOpen(false)}
+            >
+              About Us
             </a>
-            <a href="#" className="text-white text-2xl font-bold" onClick={() => setOpen(false)}>
-              Blog
-            </a>
-            <a href="#" className="text-white text-2xl font-bold" onClick={() => setOpen(false)}>
+
+            <a
+              href="careers"
+              className="text-white text-2xl font-bold"
+              onClick={() => setOpen(false)}
+            >
               Careers
+            </a>
+            <a
+              href="gallery"
+              className="text-white text-2xl font-bold"
+              onClick={() => setOpen(false)}
+            >
+              Gallery
             </a>
 
             {/* Contact Button */}

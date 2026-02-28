@@ -66,7 +66,7 @@ const DeliveryAndOffer = () => {
         {/* ────────────────────────────────────────────────
             HOW WE DELIVER – Shoppable Creative Carousel
         ──────────────────────────────────────────────── */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -85,9 +85,9 @@ const DeliveryAndOffer = () => {
             first-party signals. Consistent across the journey, optimized for
             performance, and designed to protect your brand look and feel.{" "}
           </p>
-        </motion.div>
+        </motion.div> */}
 
-        {/* Carousel */}
+{/*         
         <div className="relative mb-32">
           <div className="overflow-hidden rounded-3xl shadow-2xl">
             <motion.img
@@ -145,7 +145,7 @@ const DeliveryAndOffer = () => {
               →
             </button>
           </div>
-        </div>
+        </div> 
 
         {/* ────────────────────────────────────────────────
             WHAT WE OFFER – Tabbed Section (fixed red active)
@@ -216,7 +216,7 @@ const DeliveryAndOffer = () => {
             </p>
           </motion.div>
         </div>
-      </div>
+      {/* </div> */}
     </section>
   );
 };
