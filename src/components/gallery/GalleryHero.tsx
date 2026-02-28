@@ -1,6 +1,6 @@
 export default function GalleryHero() {
   return (
-    <section className="relative min-h-[70vh] md:min-h-[80vh] flex items-center justify-center px-6 py-20 overflow-hidden bg-black">
+    <section className="relative w-full bg-black overflow-hidden flex flex-col justify-between items-center text-center py-32 px-10 md:px-20 lg:px-32">
       
       {/* Orbital Glow Effects */}
       <div className="absolute inset-0 pointer-events-none">

@@ -4,30 +4,6 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 const DeliveryAndOffer = () => {
-  // Carousel items for "How we deliver" (Shoppable Creative)
-  const carouselItems = [
-    {
-      label: "Acquisition",
-      image:
-        "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      desc: "Generate initial conversion from new customers with dynamic, personalized ads.",
-    },
-    {
-      label: "Acquisition / Engagement",
-      image:
-        "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      desc: "Personalized shoppable overlays for higher intent and deeper brand connection.",
-    },
-    {
-      label: "Engagement",
-      image:
-        "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      desc: "Engage infrequent visitors with video, richer formats, and interactive creative.",
-    },
-  ];
-
-  const [activeCarousel, setActiveCarousel] = useState(0);
-
   // Tabs for "What we offer"
   const offerTabs = [
     {
@@ -63,90 +39,6 @@ const DeliveryAndOffer = () => {
       </div>
 
       <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-10 lg:px-12">
-        {/* ────────────────────────────────────────────────
-            HOW WE DELIVER – Shoppable Creative Carousel
-        ──────────────────────────────────────────────── */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <p className="text-sm font-semibold uppercase tracking-widest text-[#e30613] mb-6">
-            HOW WE DELIVER
-          </p>
-          <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
-            Shoppable Creative that{" "}
-            <span className="text-[#e30613]">drives real intent</span>
-          </h2>
-          <p className="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto mb-12">
-            Turn browsing into buying with personalized product units built from
-            first-party signals. Consistent across the journey, optimized for
-            performance, and designed to protect your brand look and feel.{" "}
-          </p>
-        </motion.div> */}
-
-{/*         
-        <div className="relative mb-32">
-          <div className="overflow-hidden rounded-3xl shadow-2xl">
-            <motion.img
-              key={activeCarousel}
-              src={carouselItems[activeCarousel].image}
-              alt={carouselItems[activeCarousel].label}
-              className="w-full h-[500px] md:h-[700px] object-cover"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6 }}
-            />
-          </div>
-
-          <p className="text-center mt-6 text-xl md:text-2xl font-semibold">
-            {carouselItems[activeCarousel].label}
-          </p>
-
-          {/* Navigation */}
-          <div className="flex justify-center items-center gap-8 mt-8">
-            <button
-              onClick={() =>
-                setActiveCarousel(
-                  (prev) =>
-                    (prev - 1 + carouselItems.length) % carouselItems.length,
-                )
-              }
-              className="text-4xl text-gray-500 hover:text-white transition-colors"
-              aria-label="Previous"
-            >
-              ←
-            </button>
-
-            <div className="flex gap-4">
-              {carouselItems.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setActiveCarousel(i)}
-                  className={`w-4 h-4 rounded-full transition-all ${
-                    i === activeCarousel
-                      ? "bg-[#e30613] scale-125"
-                      : "bg-gray-600 hover:bg-gray-400"
-                  }`}
-                  aria-label={`Go to slide ${i + 1}`}
-                />
-              ))}
-            </div>
-
-            <button
-              onClick={() =>
-                setActiveCarousel((prev) => (prev + 1) % carouselItems.length)
-              }
-              className="text-4xl text-gray-500 hover:text-white transition-colors"
-              aria-label="Next"
-            >
-              →
-            </button>
-          </div>
-        </div> 
-
         {/* ────────────────────────────────────────────────
             WHAT WE OFFER – Tabbed Section (fixed red active)
         ──────────────────────────────────────────────── */}
@@ -216,7 +108,7 @@ const DeliveryAndOffer = () => {
             </p>
           </motion.div>
         </div>
-      {/* </div> */}
+      </div>
     </section>
   );
 };

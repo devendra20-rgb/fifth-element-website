@@ -2,11 +2,8 @@ import React from 'react';
 
 export default function ServicesHero() {
   return (
-    <section className="relative min-h-[80vh] md:min-h-[90vh] flex items-center justify-center px-6 py-20 md:py-32 overflow-hidden bg-black">
-      
-      {/* Background subtle effects - Matches AboutHero style but with Indigo/Violet */}
+    <section className="relative w-full bg-black overflow-hidden flex flex-col justify-between items-center text-center py-32 px-10 md:px-20 lg:px-32">
       <div className="absolute inset-0 pointer-events-none">
-        {/* Main dark gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-black via-indigo-950/20 to-black" />
         
         {/* Subtle Indigo orbital/particle glows */}
@@ -16,7 +13,6 @@ export default function ServicesHero() {
         </div>
       </div>
 
-      {/* Content */}
       <div className="relative z-10 text-center max-w-6xl mx-auto">
         
         {/* Top Label - Matching AboutHero but Indigo accent */}
@@ -38,7 +34,6 @@ export default function ServicesHero() {
           advertising ecosystems designed for high-performance growth — powered by precision.
         </p>
 
-        {/* CTA Button - Matches AboutHero shape/size but with Indigo theme */}
         <a
           href="#branding"
           className="inline-flex items-center px-10 py-5 bg-indigo-600 hover:bg-indigo-700 text-white text-lg md:text-xl font-bold rounded-full shadow-2xl shadow-indigo-900/40 transform hover:scale-105 transition-all duration-300 group"
@@ -48,7 +43,6 @@ export default function ServicesHero() {
         </a>
       </div>
 
-      {/* Subtle Scroll Indicator Line at the bottom */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-30">
         <div className="w-px h-16 bg-gradient-to-b from-indigo-500 to-transparent"></div>
       </div>

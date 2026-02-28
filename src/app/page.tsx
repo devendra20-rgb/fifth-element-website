@@ -7,6 +7,7 @@ import Metrics from "@/components/Metrics";
 import Testimonials from "@/components/Testimonials";
 import CaseStudies from "@/components/CaseStudies";
 import HomeServices from "@/components/HomeServices";
+import HomeGalleryPreview from "@/components/gallery/HomeGalleryPreview";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       {/* <Solutions /> */}
       <Metrics />
       <Testimonials />
+      <HomeGalleryPreview />
       <CaseStudies />
       {/* <FinalCTA /> */}
     </>
