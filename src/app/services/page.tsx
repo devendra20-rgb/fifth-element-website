@@ -6,7 +6,7 @@ import OutdoorAds from "@/components/services/OutdoorAds";
 import ServiceCTA from "@/components/services/ServiceCTA";
 
 export const metadata = {
-  title: "Our Services | Fifth Element Advertising & Tech",
+  title: "Our Services | 5th Element Advertising & Tech",
   description: "Explore our expertise in Branding, Event Activation, and Outdoor Advertising designed for high-impact growth.",
 };
 

@@ -14,7 +14,7 @@ export default function OurStory() {
               <span className="text-sm font-bold text-indigo-600 uppercase tracking-widest mb-4 block underline decoration-2 underline-offset-8">2020: The Spark</span>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Redefining Possibilities</h3>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Fifth Element was born from a singular vision: to bridge the gap between complex Deep Learning and everyday business operations. We didn't just want to build another software—we wanted to build a brain for digital ecosystems.
+                5th Element was born from a singular vision: to bridge the gap between complex Deep Learning and everyday business operations. We didn't just want to build another software—we wanted to build a brain for digital ecosystems.
               </p>
             </div>
 

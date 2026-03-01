@@ -3,7 +3,7 @@ export default function PrivacyCenter() {
     <div className="container mx-auto px-4 py-16">
       <h1 className="text-4xl font-bold mb-6">Privacy Center</h1>
       <p className="text-lg text-gray-700 mb-4">
-        At Fifth Element, we are committed to protecting your privacy and ensuring that your personal information is handled with care. Our Privacy Center provides you with the tools and resources you need to manage your privacy preferences and understand how we use your data.
+        At 5th Element, we are committed to protecting your privacy and ensuring that your personal information is handled with care. Our Privacy Center provides you with the tools and resources you need to manage your privacy preferences and understand how we use your data.
       </p>
       <p className="text-lg text-gray-700 mb-4">
         We believe in transparency and want you to feel confident in how we handle your information. In our Privacy Center, you can review our privacy policies, learn about the types of data we collect, and find out how we use it to improve our services.

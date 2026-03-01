@@ -13,7 +13,7 @@ const Footer = () => {
           {/* Left: Logo + Tagline + Social */}
           <div className="lg:col-span-3">
             <div className="flex items-center gap-3 mb-6">
-              <img src="/5th-eleLogo.png" className="h-12 md:h-14" alt="Fifth Element Logo" />
+              <img src="/5th-eleLogo.png" className="h-12 md:h-14" alt="5th Element Logo" />
             </div>
 
             <p className="text-[#e30613] text-xl md:text-2xl font-medium mb-6 leading-tight">
@@ -70,7 +70,7 @@ const Footer = () => {
             </form>
 
             <p className="text-xs text-gray-500 mt-6 leading-relaxed">
-              By subscribing, you agree that Fifth Element will process your data to send the newsletter.
+              By subscribing, you agree that 5th Element will process your data to send the newsletter.
             </p>
 
             <label className="flex items-start gap-3 mt-4 text-xs text-gray-400 cursor-pointer">
@@ -144,7 +144,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 border-t border-white/10 pt-6">
-          <p>Copyright © {new Date().getFullYear()} Fifth Element. All rights reserved.</p>
+          <p>Copyright © {new Date().getFullYear()} 5th Element. All rights reserved.</p>
 
           <div className="flex flex-wrap gap-6 mt-4 md:mt-0">
             <Link href="/privacy-policy" className="hover:text-white transition-colors">

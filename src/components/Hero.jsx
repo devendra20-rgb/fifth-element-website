@@ -101,25 +101,24 @@ const Hero = () => {
             </p>
 
             <h1 className="text-white text-[44px] md:text-[68px] lg:text-[88px] font-[900] leading-[1.05] tracking-tight mb-8">
-              Branding that builds trust.
+              We connect digital, activations, 
               <br className="hidden sm:block" />
-              Performance that drives results.
-              <br className="hidden md:block" />
+              and OOH-seamlessly
+              {/* <br className="hidden md:block" />
               Activations & OOH that put your brand
               <br className="hidden lg:block" />
               in the real world — with
               <span className="bg-gradient-to-r from-indigo-400 via-white to-indigo-300 bg-clip-text text-transparent block mt-4 lg:mt-6">
                 measurable impact.
-              </span>
+              </span> */}
             </h1>
 
             <p className="text-white/40 text-[18px] md:text-[22px] max-w-xl font-medium mb-12 leading-relaxed">
-              Add AI-led performance layers to your existing marketing setup and
-              unlock growth across web and mobile.
+              From planning to execution, we keep your brand consistent everywhere it shows up.
             </p>
 
             <button className="group bg-[#e30613] px-12 py-5 rounded-full text-white font-black text-[18px] shadow-2xl shadow-red-600/20 hover:scale-105 transition-all flex items-center gap-4 w-fit">
-              Discover the Tech
+              Start a Project 
               <span className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center text-[22px]">
                 →
               </span>

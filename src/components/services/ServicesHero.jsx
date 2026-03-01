@@ -32,7 +32,7 @@ export default function ServicesHero() {
         {/* Subheadline */}
         <p className="text-lg md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-10 md:mb-14 font-medium">
           From brand identity to performance growth, from on-ground activations
-          to high-visibility outdoor advertising, Fifth Element delivers
+          to high-visibility outdoor advertising, 5th Element delivers
           end-to-end campaigns designed for measurable business impact.
         </p>
 

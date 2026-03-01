@@ -33,7 +33,7 @@ const Navbar = () => {
             <Link href="/" className="transition-opacity hover:opacity-90">
               <img
                 src="/5th-eleLogo.png"
-                alt="Fifth Element Logo"
+                alt="5th Element Logo"
                 className="h-12 md:h-14 w-auto object-contain cursor-pointer"
               />
             </Link>

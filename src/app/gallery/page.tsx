@@ -5,7 +5,7 @@ import JustifiedGallery from "@/components/gallery/JustifiedGallery";
 import ServiceCTA from "@/components/services/ServiceCTA";
 
 export const metadata = {
-  title: "Gallery | Fifth Element Visual Journey",
+  title: "Gallery | 5th Element Visual Journey",
   description: "Explore our visual archive of successful brand activations, corporate events, and impactful outdoor advertising.",
 };
 

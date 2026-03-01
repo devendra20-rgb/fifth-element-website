@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";     // @ = src/ alias (agar configured
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Fifth Element",
+  title: "5th Element",
   description: "...",
 };
 

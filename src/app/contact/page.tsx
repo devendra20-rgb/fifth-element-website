@@ -3,7 +3,7 @@ import ContactHero from "@/components/contact/ContactHero";
 import ContactFormSection from "@/components/contact/ContactFormSection";
 
 export const metadata = {
-  title: "Contact Us | Fifth Element Strategic Partnership",
+  title: "Contact Us | 5th Element Strategic Partnership",
   description: "Ready to scale your brand? Reach out to our team for personalized advertising and technology solutions.",
 };
 
