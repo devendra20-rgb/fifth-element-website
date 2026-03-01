@@ -25,9 +25,9 @@ const ValueProposition = () => {
         {/* Exact Header Alignment - Image 8 */}
         <div className="text-center mb-20">
           <h2 className="text-[42px] md:text-[56px] font-[900] tracking-[-0.03em] text-[#1a1a1a] leading-[1.1] mb-8">
-            First-Party Advertising <br />
-            + Deep Learning <br />
-            = <span className="text-[#e30613]">a new class of performanced</span>
+            First-Party Advertising +<br />
+            Deep Learning =<br />
+            <span className="text-[#e30613]">a new class of performance</span>
           </h2>
           <p className="text-[18px] text-[#5a5a5a] max-w-2xl mx-auto font-medium">
             No need to replace your tools. We plug in and strengthen what you already run.
