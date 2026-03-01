@@ -47,47 +47,52 @@ const Navbar = () => {
           >
             {/* Services Dropdown - Desktop (pure CSS hover) */}
             <div className="relative group">
-              <button className="flex items-center gap-1 hover:text-white/80 transition">
+              <button className="flex items-center gap-1 hover:text-white/80 transition py-2">
                 Services <ChevronDown size={14} />
               </button>
 
+              {/* Dropdown Container */}
               <div
                 className={`
-                  absolute top-full left-0 mt-2 w-64 
-                  bg-black/95 backdrop-blur-md border border-white/10 rounded-lg shadow-2xl 
-                  opacity-0 invisible group-hover:opacity-100 group-hover:visible 
-                  transition-all duration-200 pointer-events-none group-hover:pointer-events-auto
-                `}
+      absolute top-full left-0 w-64 pt-3
+      opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+      transition-all duration-200 z-50
+    `}
               >
-                <div className="flex flex-col">
-                  <Link
-                    href="/services#branding"
-                    className="flex items-center justify-between px-6 py-3 hover:bg-white/10 transition text-sm font-bold uppercase tracking-wider"
-                  >
-                    Branding + Promotion
-                    <ChevronRight size={16} className="text-white/60" />
-                  </Link>
+                {/* Inner Box - Actual Background */}
+                <div className="bg-black/95 backdrop-blur-md border border-white/10 rounded-lg shadow-2xl overflow-hidden">
+                  <div className="flex flex-col">
+                    <Link
+                      href="/services#branding"
+                      className="flex items-center justify-between px-6 py-3 hover:bg-white/10 transition text-sm font-bold uppercase tracking-wider text-white"
+                    >
+                      Branding + Promotion
+                      <ChevronRight size={16} className="text-white/60" />
+                    </Link>
 
-                  <Link
-                    href="/services#events"
-                    className="flex items-center justify-between px-6 py-3 hover:bg-white/10 transition text-sm font-bold uppercase tracking-wider"
-                  >
-                    Activation & Events
-                    <ChevronRight size={16} className="text-white/60" />
-                  </Link>
+                    <Link
+                      href="/services#events"
+                      className="flex items-center justify-between px-6 py-3 hover:bg-white/10 transition text-sm font-bold uppercase tracking-wider text-white"
+                    >
+                      Activation & Events
+                      <ChevronRight size={16} className="text-white/60" />
+                    </Link>
 
-                  <Link
-                    href="/services#outdoor"
-                    className="flex items-center justify-between px-6 py-3 hover:bg-white/10 transition text-sm font-bold uppercase tracking-wider"
-                  >
-                    Outdoor Advertising
-                    <ChevronRight size={16} className="text-white/60" />
-                  </Link>
+                    <Link
+                      href="/services#outdoor"
+                      className="flex items-center justify-between px-6 py-3 hover:bg-white/10 transition text-sm font-bold uppercase tracking-wider text-white"
+                    >
+                      Outdoor Advertising
+                      <ChevronRight size={16} className="text-white/60" />
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
-
-            <Link href="/case-studies" className="hover:text-white/80 transition">
+            <Link
+              href="/case-studies"
+              className="hover:text-white/80 transition"
+            >
               Case Studies
             </Link>
             <Link href="/gallery" className="hover:text-white/80 transition">

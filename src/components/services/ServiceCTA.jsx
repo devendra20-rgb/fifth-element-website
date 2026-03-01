@@ -1,58 +1,57 @@
-import React from 'react';
-import { ArrowRight, Send } from 'lucide-react';
+"use client";
+
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { ArrowRight, Send } from "lucide-react";
 
 export default function ServiceCTA() {
   return (
-    <section className="py-24 px-6 bg-[#0f172a] relative overflow-hidden">
-      {/* Decorative Background Elements */}
-      <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[120px]"></div>
-      <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-[400px] h-[400px] bg-indigo-500/10 rounded-full blur-[100px]"></div>
-
-      <div className="max-w-5xl mx-auto relative z-10">
-        <div className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] border border-gray-800 p-10 md:p-20 rounded-[3rem] text-center shadow-2xl">
-          <span className="text-indigo-400 font-bold tracking-[0.3em] uppercase text-sm mb-6 block">
+    <section className="relative py-24 md:py-32 px-6 md:px-12 lg:px-16 bg-white overflow-hidden border-t border-gray-100">
+      <div className="relative z-10 max-w-5xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.9 }}
+          className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 p-10 md:p-16 lg:p-20 rounded-[3rem] text-center shadow-2xl"
+        >
+          <span className="text-[#e30613] font-bold tracking-[0.3em] uppercase text-sm md:text-base mb-6 block">
             Ready to scale?
           </span>
-          
-          <h2 className="text-4xl md:text-6xl font-black text-white mb-8 leading-tight">
-            Let's build your <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-indigo-200">
+
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#0f172a] mb-8 leading-tight">
+            Let’s build your <br />
+            <span className="text-[#e30613]">
               Next Big Campaign
             </span>
           </h2>
 
-          <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed">
-            Whether it's a nationwide branding strategy or a high-impact local event, 
-            our team is ready to deliver excellence.
+          <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-12 leading-relaxed">
+            Tell us your goal and your market. We’ll recommend the best mix across branding, performance, activations, and outdoor.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            {/* Primary Button */}
-            <a 
-              href="/contact" 
-              className="group relative px-10 py-5 bg-indigo-600 text-white font-bold rounded-full overflow-hidden transition-all duration-300 hover:bg-indigo-500 hover:shadow-[0_0_30px_rgba(79,70,229,0.4)] flex items-center gap-3"
+            <Link
+              href="/contact"
+              className="group inline-flex items-center px-10 py-5 bg-[#e30613] hover:bg-red-700 text-white font-bold rounded-full shadow-xl shadow-red-900/30 transition-all duration-300 hover:scale-105"
             >
               Start a Project
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-            </a>
+              <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
 
-            {/* Secondary Button */}
-            <a 
-              href="mailto:hello@fifthelement.com" 
-              className="px-10 py-5 bg-transparent border border-gray-700 text-white font-bold rounded-full hover:bg-white/5 transition-all flex items-center gap-3"
+            <a
+              href="mailto:hello@fifthelement.com"
+              className="group inline-flex items-center px-10 py-5 border border-gray-300 text-[#0f172a] font-bold rounded-full hover:bg-gray-50 transition-all duration-300"
             >
-              <Send className="w-5 h-5" />
+              <Send className="mr-3 w-5 h-5" />
               Drop an Email
             </a>
           </div>
 
-          {/* Trust Indicator */}
-          <div className="mt-16 pt-10 border-t border-gray-800/50">
-            <p className="text-gray-500 text-sm font-medium uppercase tracking-widest">
-              Trusted by 50+ Global Enterprises
-            </p>
-          </div>
-        </div>
+          <p className="text-sm text-gray-600 mt-12">
+            Trusted by brands across India — delivering measurable impact every time.
+          </p>
+        </motion.div>
       </div>
     </section>
   );

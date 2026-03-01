@@ -8,6 +8,7 @@ import Testimonials from "@/components/Testimonials";
 import CaseStudies from "@/components/CaseStudies";
 import HomeServices from "@/components/HomeServices";
 import HomeGalleryPreview from "@/components/gallery/HomeGalleryPreview";
+import JoinUsCTA from "@/components/about/JoinUsCTA";
 
 export default function Home() {
   return (
@@ -23,7 +24,7 @@ export default function Home() {
       <Testimonials />
       <HomeGalleryPreview />
       <CaseStudies />
-      {/* <FinalCTA /> */}
+      <JoinUsCTA />
     </>
   );
 }

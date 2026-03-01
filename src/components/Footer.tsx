@@ -191,27 +191,33 @@ const WorldClock = ({ city, offset }: { city: string; offset: number }) => {
   const utc = time.getTime() + time.getTimezoneOffset() * 60000;
   const cityTime = new Date(utc + 3600000 * offset);
 
-  const seconds = cityTime.getSeconds();
   const minutes = cityTime.getMinutes();
   const hours = cityTime.getHours();
 
-  const secDeg = seconds * 6;
   const minDeg = minutes * 6;
-  const hourDeg = hours * 30 + minutes / 2;
+  const hourDeg = (hours % 12) * 30 + minutes / 2;
 
   return (
     <div className="flex flex-col items-center gap-2">
-      <div className="relative w-14 h-14 rounded-full border border-white/30 flex items-center justify-center">
+      {/* Clock Face */}
+      <div className="relative w-14 h-14 rounded-full border border-white/30">
+        
+        {/* Hour Hand */}
         <div
-          className="absolute w-[2px] h-4 bg-white origin-bottom"
-          style={{ transform: `rotate(${hourDeg}deg)` }}
+          className="absolute left-1/2 top-1/2 w-[2px] h-4 bg-white origin-bottom -translate-x-1/2 -translate-y-full"
+          style={{ transform: `translateX(-50%) translateY(-100%) rotate(${hourDeg}deg)` }}
         />
+        
+        {/* Minute Hand */}
         <div
-          className="absolute w-[1.5px] h-5 bg-white origin-bottom"
-          style={{ transform: `rotate(${minDeg}deg)` }}
+          className="absolute left-1/2 top-1/2 w-[1.5px] h-5 bg-white origin-bottom -translate-x-1/2 -translate-y-full"
+          style={{ transform: `translateX(-50%) translateY(-100%) rotate(${minDeg}deg)` }}
         />
-        <div className="w-1.5 h-1.5 bg-white rounded-full" />
+
+        {/* Center Dot */}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 bg-white rounded-full z-10" />
       </div>
+      
       <span className="text-xs text-white/80">{city}</span>
     </div>
   );
