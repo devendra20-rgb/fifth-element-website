@@ -48,7 +48,7 @@ const Testimonials = () => {
         {/* --- Header: Clean Alignment --- */}
         <div className="flex items-center justify-between mb-12 border-b border-black/5 pb-6">
           <p className="text-[11px] tracking-[0.4em] uppercase font-[900] text-black">
-            How we work
+            Client's Testimony
           </p>
 
           <div className="flex items-center gap-6">

@@ -84,137 +84,102 @@ const galleryPreview = [
 export default function HomeGalleryPreview() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  const scrollLeft = () => {
+  const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: -400, behavior: "smooth" });
-    }
-  };
-
-  const scrollRight = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: 400, behavior: "smooth" });
+      // Mobile pe screen width ke hisaab se scroll, desktop pe fix 400px
+      const scrollAmount =
+        window.innerWidth < 768 ? window.innerWidth * 0.85 : 400;
+      scrollRef.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
+      });
     }
   };
 
   return (
-    <section className="relative w-full bg-black overflow-hidden flex flex-col justify-between items-center text-center py-32 px-10 md:px-20 lg:px-32">
-      <div className="max-w-[1600px] mx-auto px-6 md:px-12">
-        {/* Header */}
-        <div className="text-center mb-12 md:mb-16">
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-indigo-500 uppercase tracking-[0.3em] text-sm md:text-base font-bold mb-4"
-          >
+    <section className="relative w-full bg-black py-16 md:py-32">
+      <div className="w-full max-w-[1600px] mx-auto">
+        {/* Header Section */}
+        <div className="text-center mb-10 px-6">
+          <motion.p className="text-indigo-500 uppercase tracking-[0.2em] text-xs md:text-base font-bold mb-3">
             Visual Stories
           </motion.p>
-
-          <motion.h2
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.9, delay: 0.2 }}
-            className="text-4xl md:text-6xl font-black tracking-tight leading-tight"
-          >
-            Moments That <span className="text-indigo-400">Defined Success</span>
+          <motion.h2 className="text-3xl md:text-6xl font-black tracking-tight leading-tight text-white">
+            Moments That{" "}
+            <span className="text-indigo-400">Defined Success</span>
           </motion.h2>
-
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg md:text-xl text-gray-400 mt-6 max-w-3xl mx-auto"
-          >
-            A glimpse into our activations, corporate executions, and outdoor campaigns that turned brands into unforgettable experiences.
-          </motion.p>
         </div>
 
         {/* Gallery Container */}
         <div className="relative group">
-          {/* Left Arrow */}
+          {/* Desktop Arrows (Mobile pe hidden) */}
           <button
-            onClick={scrollLeft}
-            className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-black/80 text-white p-4 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-2xl backdrop-blur-md"
-            aria-label="Scroll left"
+            onClick={() => scroll("left")}
+            className="hidden md:flex absolute left-8 top-1/2 -translate-y-1/2 z-30 bg-black/60 hover:bg-black text-white p-4 rounded-full opacity-0 group-hover:opacity-100 transition-all shadow-2xl backdrop-blur-md"
           >
-            <ArrowLeft size={32} />
+            <ArrowLeft size={24} />
           </button>
 
-          {/* Right Arrow */}
           <button
-            onClick={scrollRight}
-            className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-black/80 text-white p-4 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-2xl backdrop-blur-md"
-            aria-label="Scroll right"
+            onClick={() => scroll("right")}
+            className="hidden md:flex absolute right-8 top-1/2 -translate-y-1/2 z-30 bg-black/60 hover:bg-black text-white p-4 rounded-full opacity-0 group-hover:opacity-100 transition-all shadow-2xl backdrop-blur-md"
           >
-            <ArrowRight size={32} />
+            <ArrowRight size={24} />
           </button>
 
-          {/* Scrollable Gallery - scrollbar completely hide with inline style */}
+          {/* Scrollable Area */}
           <div
             ref={scrollRef}
-            className="flex gap-6 md:gap-8 overflow-x-auto pb-8 snap-x snap-mandatory scroll-smooth"
-            style={{
-              // Hide scrollbar cross-browser
-              msOverflowStyle: "none" /* IE and Edge */,
-              scrollbarWidth: "none" /* Firefox */,
-            }}
+            className="flex gap-4 md:gap-8 overflow-x-auto px-6 md:px-12 pb-8 snap-x snap-mandatory scroll-smooth no-scrollbar"
           >
-            {/* Webkit browsers (Chrome, Safari) scrollbar hide */}
-            <style jsx>{`
-              div::-webkit-scrollbar {
-                display: none;
-              }
-            `}</style>
-
             {galleryPreview.map((item) => (
               <motion.div
                 key={item.id}
-                className="min-w-[300px] md:min-w-[420px] snap-center group relative overflow-hidden rounded-3xl shadow-2xl cursor-pointer flex-shrink-0"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.4 }}
+                // FIXED SIZE FOR MOBILE & DESKTOP
+                className="w-[80vw] md:w-[450px] aspect-[3/4] md:aspect-[4/5] snap-center group relative overflow-hidden rounded-2xl md:rounded-3xl shadow-2xl cursor-pointer flex-shrink-0"
+                whileTap={{ scale: 0.98 }}
               >
+                {/* Image takes full container space without distortion */}
                 <img
                   src={item.src}
                   alt={item.alt}
-                  className="w-full h-[420px] md:h-[520px] object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
-                  <span className="text-indigo-400 text-sm font-bold uppercase tracking-wider mb-2">
+                {/* Overlay content */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-6 md:p-8">
+                  <span className="text-indigo-400 text-xs md:text-sm font-bold uppercase tracking-wider mb-1">
                     {item.category}
                   </span>
-                  <h3 className="text-xl md:text-2xl font-bold text-white">
+                  <h3 className="text-lg md:text-2xl font-bold text-white leading-tight">
                     {item.alt}
                   </h3>
                 </div>
               </motion.div>
             ))}
           </div>
-
-          {/* Fade gradients for scroll hint */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent pointer-events-none z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent pointer-events-none z-10" />
         </div>
 
-        {/* View More CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 1 }}
-          className="text-center mt-12 md:mt-16"
-        >
-          <Link href="/gallery">
-            <button className="group inline-flex items-center gap-3 px-10 py-5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-lg rounded-full shadow-xl shadow-indigo-900/30 transition-all duration-300 hover:scale-105">
+        {/* View More Button */}
+        <div className="text-center mt-10 px-6">
+          <Link href="/gallery" className="inline-block w-full md:w-auto">
+            <button className="w-full md:w-auto inline-flex items-center justify-center gap-3 px-10 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-full transition-all active:scale-95">
               View Full Gallery
-              <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+              <ArrowRight className="w-5 h-5" />
             </button>
           </Link>
-        </motion.div>
+        </div>
       </div>
+
+      <style jsx global>{`
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .no-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
     </section>
   );
 }
