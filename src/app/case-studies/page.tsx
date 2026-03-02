@@ -3,6 +3,7 @@ import BrandingDetailed from "@/components/case-studies/BrandingDetailed";
 import EventsDetailed from "@/components/case-studies/EventsDetailed";
 import OutdoorDetailed from "@/components/case-studies/OutdoorDetailed";
 import ServiceCTA from "@/components/services/ServiceCTA";
+import JoinUsCTA from "@/components/about/JoinUsCTA";
 
 export default function CaseStudiesPage() {
   return (
@@ -11,7 +12,8 @@ export default function CaseStudiesPage() {
       <BrandingDetailed />
       <EventsDetailed />
       <OutdoorDetailed />
-      <ServiceCTA />
+      <JoinUsCTA />
+      {/* <ServiceCTA /> */}
     </main>
   );
 }

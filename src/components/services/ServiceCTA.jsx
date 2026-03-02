@@ -15,13 +15,13 @@ export default function ServiceCTA() {
           transition={{ duration: 0.9 }}
           className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 p-10 md:p-16 lg:p-20 rounded-[3rem] text-center shadow-2xl"
         >
-          <span className="text-[#e30613] font-bold tracking-[0.3em] uppercase text-sm md:text-base mb-6 block">
+          <span className="text-[#39b14a] font-bold tracking-[0.3em] uppercase text-sm md:text-base mb-6 block">
             Ready to scale?
           </span>
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#0f172a] mb-8 leading-tight">
             Let’s build your <br />
-            <span className="text-[#e30613]">
+            <span className="text-[#39b14a]">
               Next Big Campaign
             </span>
           </h2>
@@ -33,23 +33,23 @@ export default function ServiceCTA() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Link
               href="/contact"
-              className="group inline-flex items-center px-10 py-5 bg-[#e30613] hover:bg-red-700 text-white font-bold rounded-full shadow-xl shadow-red-900/30 transition-all duration-300 hover:scale-105"
+              className="group inline-flex items-center px-10 py-5 bg-[#39b14a] hover:bg-red-700 text-white font-bold rounded-full shadow-xl shadow-red-900/30 transition-all duration-300 hover:scale-105"
             >
               Start a Project
               <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
 
-            <a
+            {/* <a
               href="mailto:hello@fifthelement.com"
               className="group inline-flex items-center px-10 py-5 border border-gray-300 text-[#0f172a] font-bold rounded-full hover:bg-gray-50 transition-all duration-300"
             >
               <Send className="mr-3 w-5 h-5" />
               Drop an Email
-            </a>
+            </a> */}
           </div>
 
           <p className="text-sm text-gray-600 mt-12">
-            Trusted by brands across India — delivering measurable impact every time.
+            Trusted by brands across India - delivering measurable impact every time.
           </p>
         </motion.div>
       </div>

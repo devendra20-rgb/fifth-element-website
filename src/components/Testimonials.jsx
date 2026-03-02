@@ -56,10 +56,10 @@ const Testimonials = () => {
               0{index + 1} / 0{testimonials.length}
             </span>
             <div className="flex gap-2">
-              <button onClick={prev} className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center hover:bg-[#e30613] transition-all">
+              <button onClick={prev} className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center hover:bg-[#39b14a] transition-all">
                 <ArrowLeft size={16} />
               </button>
-              <button onClick={next} className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center hover:bg-[#e30613] transition-all">
+              <button onClick={next} className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center hover:bg-[#39b14a] transition-all">
                 <ArrowRight size={16} />
               </button>
             </div>
@@ -82,7 +82,7 @@ const Testimonials = () => {
               {/* Active Card */}
               <div className="flex flex-col justify-between">
                 <div>
-                  <p className="text-[13px] font-black uppercase tracking-widest text-[#e30613] mb-6">
+                  <p className="text-[13px] font-black uppercase tracking-widest text-[#39b14a] mb-6">
                     {testimonials[index].company}
                   </p>
                   <h2 className="text-[24px] md:text-[34px] font-bold leading-[1.25] text-black tracking-tight mb-8">
@@ -191,7 +191,7 @@ export default Testimonials;
 //         {/* Carousel Container */}
 //         <div className="relative">
 //           {/* Progress line (gradient red-purple) */}
-//           <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#e30613] via-purple-600 to-purple-800" style={{ width: `${((currentIndex + 1) / testimonials.length) * 100}%`, transition: 'width 0.5s ease' }} />
+//           <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#39b14a] via-purple-600 to-purple-800" style={{ width: `${((currentIndex + 1) / testimonials.length) * 100}%`, transition: 'width 0.5s ease' }} />
 
 //           {/* Current Testimonial */}
 //           <motion.div
@@ -211,7 +211,7 @@ export default Testimonials;
 //               <p className="text-gray-600">{testimonials[currentIndex].role}</p>
 //               <a
 //                 href={testimonials[currentIndex].link}
-//                 className="mt-6 inline-block bg-[#e30613] text-white px-8 py-3 rounded-full font-semibold hover:bg-red-700 transition"
+//                 className="mt-6 inline-block bg-[#39b14a] text-white px-8 py-3 rounded-full font-semibold hover:bg-red-700 transition"
 //               >
 //                 Read more
 //               </a>
@@ -301,7 +301,7 @@ export default Testimonials;
 //             {/* Animated Gradient Progress Bar */}
 //             <div className="w-64 h-[2px] bg-gray-100 relative">
 //               <motion.div
-//                 className="absolute inset-0 bg-gradient-to-r from-[#e30613] via-purple-500 to-blue-500"
+//                 className="absolute inset-0 bg-gradient-to-r from-[#39b14a] via-purple-500 to-blue-500"
 //                 initial={{ width: "0%" }}
 //                 animate={{ width: `${((currentIndex + 1) / testimonials.length) * 100}%` }}
 //                 transition={{ duration: 0.5 }}
@@ -352,7 +352,7 @@ export default Testimonials;
 //                     {testimonials[currentIndex].role}
 //                   </p>
 //                 </div>
-//                 <button className="mt-12 bg-[#e30613] text-white px-10 py-4 rounded-full text-[13px] font-black uppercase tracking-widest hover:bg-[#c40510] transition-all">
+//                 <button className="mt-12 bg-[#39b14a] text-white px-10 py-4 rounded-full text-[13px] font-black uppercase tracking-widest hover:bg-[#c40510] transition-all">
 //                   Read more
 //                 </button>
 //               </div>

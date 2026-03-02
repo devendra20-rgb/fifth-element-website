@@ -49,7 +49,7 @@ const Metrics = () => {
                 className="flex-1 flex flex-col items-center text-center px-8"
               >
                 {/* Value with Gradient - Exact Image 13 Style */}
-                <div className="text-[54px] md:text-[68px] font-[900] leading-none mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#e30613] via-[#a855f7] to-[#8b5cf6]">
+                <div className="text-[54px] md:text-[68px] font-[900] leading-none mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#39b14a] via-[#a855f7] to-[#8b5cf6]">
                   {metric.value}
                 </div>
 

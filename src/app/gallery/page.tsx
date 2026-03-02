@@ -3,9 +3,10 @@ import GalleryHero from "@/components/gallery/GalleryHero";
 import FilterableMasonry from "@/components/gallery/FilterableMasonry";
 import JustifiedGallery from "@/components/gallery/JustifiedGallery";
 import ServiceCTA from "@/components/services/ServiceCTA";
+import JoinUsCTA from "@/components/about/JoinUsCTA";
 
 export const metadata = {
-  title: "Gallery | 5th Element Visual Journey",
+  title: "Gallery | Fifth Element Visual Journey",
   description: "Explore our visual archive of successful brand activations, corporate events, and impactful outdoor advertising.",
 };
 
@@ -20,9 +21,10 @@ export default function GalleryPage() {
       
       {/* 3. Detailed Justified Section with Story */}
       <JustifiedGallery />
+      <JoinUsCTA />
       
       {/* 4. Common CTA */}
-      <ServiceCTA />
+      {/* <ServiceCTA /> */}
     </main>
   );
 }

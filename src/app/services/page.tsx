@@ -4,6 +4,7 @@ import BrandingPromotion from "@/components/services/BrandingPromotion";
 import EventActivation from "@/components/services/EventActivation";
 import OutdoorAds from "@/components/services/OutdoorAds";
 import ServiceCTA from "@/components/services/ServiceCTA";
+import JoinUsCTA from "@/components/about/JoinUsCTA";
 
 export const metadata = {
   title: "Our Services | 5th Element Advertising & Tech",
@@ -17,8 +18,8 @@ export default function ServicesPage() {
       <BrandingPromotion />
       <EventActivation />
       <OutdoorAds />
-      
-      <ServiceCTA />
+      <JoinUsCTA />
+      {/* <ServiceCTA /> */}
     </div>
   );
 }

@@ -27,7 +27,7 @@ const ValueProposition = () => {
           <h2 className="text-[42px] md:text-[56px] font-[900] tracking-[-0.03em] text-[#1a1a1a] leading-[1.1] mb-8">
             First-Party Advertising +<br />
             Deep Learning =<br />
-            <span className="text-[#e30613]">a new class of performance</span>
+            <span className="text-[#39b14a]">a new class of performance</span>
           </h2>
           <p className="text-[18px] text-[#5a5a5a] max-w-2xl mx-auto font-medium">
             No need to replace your tools. We plug in and strengthen what you already run.
@@ -62,7 +62,7 @@ const ValueProposition = () => {
                 <div className="relative z-10 w-[70%] h-[50%] border border-white/10 rounded-3xl bg-white/[0.02] backdrop-blur-md flex flex-col items-center justify-center gap-6">
                    <div className="flex gap-2">
                       {[1,2,3,4].map(i => (
-                        <div key={i} className="w-1.5 h-12 bg-[#e30613] rounded-full opacity-50 animate-pulse" style={{ animationDelay: `${i * 0.2}s` }} />
+                        <div key={i} className="w-1.5 h-12 bg-[#39b14a] rounded-full opacity-50 animate-pulse" style={{ animationDelay: `${i * 0.2}s` }} />
                       ))}
                    </div>
                    <p className="text-white/20 text-[9px] font-black uppercase tracking-[0.4em]">DEEP LEARNING ENGINE</p>
@@ -71,7 +71,7 @@ const ValueProposition = () => {
 
               {/* Right Side: Content Area (Pure White) */}
               <div className="w-full md:w-[54%] p-12 md:p-20 flex flex-col justify-center bg-white">
-                <p className="text-[#e30613] font-[900] uppercase tracking-[0.25em] text-[11px] mb-8">
+                <p className="text-[#39b14a] font-[900] uppercase tracking-[0.25em] text-[11px] mb-8">
                   {card.label}
                 </p>
                 <h3 className="text-[36px] md:text-[48px] font-[900] text-[#1a1a1a] mb-8 leading-[1.1] tracking-tighter">

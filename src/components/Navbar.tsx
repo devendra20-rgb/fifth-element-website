@@ -23,7 +23,7 @@ const Navbar = () => {
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        isScrolled ? "bg-[#EF6192] shadow-md" : "bg-transparent"
+        isScrolled ? "bg-[#6900CC] shadow-md" : "bg-transparent"
       }`}
     >
       <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 md:px-10">
@@ -48,7 +48,7 @@ const Navbar = () => {
             {/* Services Dropdown - Desktop (pure CSS hover) */}
             <div className="relative group">
               <button className="flex items-center gap-1 hover:text-white/80 transition py-2">
-                Services <ChevronDown size={14} />
+                SERVICES <ChevronDown size={14} />
               </button>
 
               {/* Dropdown Container */}
@@ -112,7 +112,7 @@ const Navbar = () => {
               href="/contact"
               className={`hidden sm:block px-6 md:px-8 py-2.5 rounded-full text-[11px] font-black uppercase tracking-widest border transition-all ${
                 isScrolled
-                  ? "border-white text-white hover:bg-white hover:text-[#EF6192]"
+                  ? "border-white text-white hover:bg-white hover:text-[#6900CC]"
                   : "border-white/30 text-white hover:bg-white hover:text-black"
               }`}
             >
@@ -217,7 +217,7 @@ const Navbar = () => {
             {/* Contact */}
             <Link
               href="/contact"
-              className="mt-8 w-3/4 max-w-xs bg-[#e30613] text-white py-4 rounded-full font-bold text-xl hover:bg-red-700 transition text-center"
+              className="mt-8 w-3/4 max-w-xs bg-[#39b14a] text-white py-4 rounded-full font-bold text-xl hover:bg-red-700 transition text-center"
               onClick={handleMobileClose}
             >
               Contact us

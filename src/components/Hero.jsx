@@ -78,7 +78,7 @@ const Hero = () => {
               />
               <defs>
                 <linearGradient id="grad1" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#e30613" />
+                  <stop offset="0%" stopColor="#39b14a" />
                   <stop offset="100%" stopColor="#9333ea" />
                 </linearGradient>
                 <linearGradient id="grad2" x1="0" y1="0" x2="0" y2="1">
@@ -96,33 +96,46 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
             className="max-w-[950px] relative z-20"
           >
-            <p className="text-[#e30613] tracking-[0.45em] text-[12px] font-[900] mb-8 uppercase">
+            <p className="text-[#39b14a] tracking-[0.45em] text-[12px] font-[900] mb-8 uppercase">
               Grow faster - without losing control
             </p>
 
             <h1 className="text-white text-[44px] md:text-[68px] lg:text-[88px] font-[900] leading-[1.05] tracking-tight mb-8">
-              We connect digital, activations, 
+              We connect digital, activations,
               <br className="hidden sm:block" />
               and OOH-seamlessly
               {/* <br className="hidden md:block" />
               Activations & OOH that put your brand
               <br className="hidden lg:block" />
-              in the real world — with
+              in the real world - with
               <span className="bg-gradient-to-r from-indigo-400 via-white to-indigo-300 bg-clip-text text-transparent block mt-4 lg:mt-6">
                 measurable impact.
               </span> */}
             </h1>
 
             <p className="text-white/40 text-[18px] md:text-[22px] max-w-xl font-medium mb-12 leading-relaxed">
-              From planning to execution, we keep your brand consistent everywhere it shows up.
+              From planning to execution, we keep your brand consistent
+              everywhere it shows up.
             </p>
 
-            <button className="group bg-[#e30613] px-12 py-5 rounded-full text-white font-black text-[18px] shadow-2xl shadow-red-600/20 hover:scale-105 transition-all flex items-center gap-4 w-fit">
-              Start a Project 
-              <span className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center text-[22px]">
-                →
-              </span>
-            </button>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              whileHover={{ scale: 1.05 }}
+            >
+              <a
+                href="/contact"
+                className="group relative inline-flex items-center gap-3 px-12 py-5 bg-gradient-to-r from-[#6900CC] to-[#39B14A] text-white text-xl font-black uppercase tracking-widest rounded-full shadow-[0_10px_40px_rgba(105,0,204,0.4)] transition-all duration-300 overflow-hidden"
+              >
+                {/* White Shine Effect on Hover */}
+                <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500 skew-x-12" />
+
+                <span className="relative z-10">Start a Project</span>
+                <span className="relative z-10 group-hover:translate-x-1 transition-transform">
+                  →
+                </span>
+              </a>
+            </motion.div>
           </motion.div>
         </div>
       </div>
@@ -212,12 +225,12 @@ export default Hero;
 //       transition={{ duration: 0.7 }}
 //       className="max-w-[700px] text-center md:text-left"
 //     >
-//       <p className="text-[#e30613] tracking-[0.3em] text-[11px] sm:text-[12px] font-bold mb-4 sm:mb-6 uppercase">
+//       <p className="text-[#39b14a] tracking-[0.3em] text-[11px] sm:text-[12px] font-bold mb-4 sm:mb-6 uppercase">
 //         NEXT-GEN PERFORMANCE ADVERTISING
 //       </p>
 
 //       <h1 className="text-white text-[36px] sm:text-[44px] md:text-[64px] lg:text-[74px] font-extrabold leading-[1.1] tracking-[-0.02em] mb-5 sm:mb-6">
-//         Grow revenue faster — <br className="sm:hidden" />
+//         Grow revenue faster - <br className="sm:hidden" />
 //         without losing control.<br />
 //         Find the hidden wins.
 //       </h1>
@@ -226,7 +239,7 @@ export default Hero;
 //         Add AI-led performance layers to your existing marketing setup and unlock growth across web and mobile.
 //       </p>
 
-//       <button className="group bg-[#e30613] px-8 sm:px-10 py-3.5 sm:py-4 rounded-full text-white font-semibold text-[14px] sm:text-[16px] shadow-[0_8px_30px_rgba(227,6,19,0.35)] hover:scale-105 transition-all flex items-center gap-3 mx-auto md:mx-0">
+//       <button className="group bg-[#39b14a] px-8 sm:px-10 py-3.5 sm:py-4 rounded-full text-white font-semibold text-[14px] sm:text-[16px] shadow-[0_8px_30px_rgba(227,6,19,0.35)] hover:scale-105 transition-all flex items-center gap-3 mx-auto md:mx-0">
 //         Discover the Tech
 //         <span className="w-6 h-6 sm:w-7 sm:h-7 rounded-full border border-white/40 flex items-center justify-center group-hover:translate-x-1 transition">
 //           →

@@ -1,50 +1,53 @@
-// components/case-studies/EventsDetailed.jsx
 import { MapPin, Users, Zap } from "lucide-react";
 
 export default function EventsDetailed() {
   return (
-    <section className="py-24 bg-[#0f172a] text-white overflow-hidden">
+    <section className="py-24 bg-black text-white overflow-hidden border-y border-white/5">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-black mb-6 uppercase italic">The Mega Activation Hub</h2>
-          <p className="text-indigo-400 font-bold uppercase tracking-widest">A 3-Day Immersive Brand Experience</p>
+          <h2 className="text-4xl md:text-7xl font-black mb-6 uppercase italic">The Mega Activation Hub</h2>
+          <p className="bg-gradient-to-r from-[#6900CC] to-[#39B14A] bg-clip-text text-transparent font-black uppercase tracking-[0.3em]">
+            A 3-Day Immersive Brand Experience
+          </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
-          {/* Detailed Stat Card 1 */}
-          <div className="bg-[#1e293b] p-10 rounded-[2rem] border border-gray-800">
-            <div className="w-12 h-12 bg-indigo-600 rounded-xl flex items-center justify-center mb-6">
-              <Users className="text-white" />
+        <div className="grid lg:grid-cols-3 gap-8 relative">
+          {/* Card 1 */}
+          <div className="bg-[#111] p-10 rounded-[2.5rem] border border-white/5 hover:border-[#6900CC]/50 transition-all">
+            <div className="w-14 h-14 bg-[#6900CC] rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-[#6900CC]/20">
+              <Users className="text-white" size={28} />
             </div>
-            <h3 className="text-2xl font-bold mb-4 italic underline decoration-indigo-500 underline-offset-4">The Crowd</h3>
-            <p className="text-gray-400 leading-relaxed mb-6">
-              Humne 15 Prime locations par simultaneous activations kiye, jisme 50,000+ log directly brand se engage hue.
+            <h3 className="text-2xl font-black mb-4 text-white uppercase italic">The Crowd</h3>
+            <p className="text-gray-500 leading-relaxed mb-6 font-medium">
+              Prime locations par simultaneous activations, 50,000+ direct brand engagements.
             </p>
-            <div className="text-3xl font-black text-white">50K+ <span className="text-sm font-normal text-indigo-400">Attendees</span></div>
+            <div className="text-4xl font-black text-[#6900CC]">50K+</div>
           </div>
 
-          {/* Center Detailed Card (Focus on Tech) */}
-          <div className="bg-indigo-600 p-10 rounded-[2rem] shadow-2xl shadow-indigo-600/20 lg:-mt-10 lg:mb-10">
-            <div className="w-12 h-12 bg-white text-indigo-600 rounded-xl flex items-center justify-center mb-6">
-              <Zap />
+          {/* Center Card - Highlighted */}
+          <div className="bg-gradient-to-br from-[#6900CC] to-[#39B14A] p-1 rounded-[2.5rem] lg:-mt-10">
+            <div className="bg-black h-full w-full rounded-[2.4rem] p-10">
+              <div className="w-14 h-14 bg-white text-black rounded-2xl flex items-center justify-center mb-8">
+                <Zap fill="currentColor" size={28} />
+              </div>
+              <h3 className="text-2xl font-black mb-4 text-white uppercase italic">Innovation</h3>
+              <p className="text-gray-400 leading-relaxed mb-6 font-medium">
+                AR/VR kiosks ne dwell time ko 3x badha diya, bridging physical and virtual worlds.
+              </p>
+              <div className="text-4xl font-black text-[#39B14A]">8.5 Min</div>
             </div>
-            <h3 className="text-2xl font-bold mb-4 italic underline decoration-white underline-offset-4">Innovation</h3>
-            <p className="text-indigo-50 leading-relaxed mb-6">
-              AR/VR kiosks ke zariye humne physical products ko virtual world mein showcase kiya, jisne dwell time 3x badha diya.
-            </p>
-            <div className="text-3xl font-black text-white">8.5 Min <span className="text-sm font-normal text-indigo-100">Avg. Engagement</span></div>
           </div>
 
-          {/* Detailed Stat Card 3 */}
-          <div className="bg-[#1e293b] p-10 rounded-[2rem] border border-gray-800">
-            <div className="w-12 h-12 bg-indigo-600 rounded-xl flex items-center justify-center mb-6">
-              <MapPin className="text-white" />
+          {/* Card 3 */}
+          <div className="bg-[#111] p-10 rounded-[2.5rem] border border-white/5 hover:border-[#39B14A]/50 transition-all">
+            <div className="w-14 h-14 bg-[#39B14A] rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-[#39B14A]/20">
+              <MapPin className="text-white" size={28} />
             </div>
-            <h3 className="text-2xl font-bold mb-4 italic underline decoration-indigo-500 underline-offset-4">Presence</h3>
-            <p className="text-gray-400 leading-relaxed mb-6">
-              Pan-India execution ne brand ko Tier-1 aur Tier-2 cities dono mein massive visibility dilaayi.
+            <h3 className="text-2xl font-black mb-4 text-white uppercase italic">Presence</h3>
+            <p className="text-gray-500 leading-relaxed mb-6 font-medium">
+              Pan-India execution covering Tier-1 and Tier-2 cities for massive visibility.
             </p>
-            <div className="text-3xl font-black text-white">15 <span className="text-sm font-normal text-indigo-400">Cities Covered</span></div>
+            <div className="text-4xl font-black text-[#39B14A]">15 Cities</div>
           </div>
         </div>
       </div>

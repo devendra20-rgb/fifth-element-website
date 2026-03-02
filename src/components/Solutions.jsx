@@ -34,7 +34,7 @@ const Solutions = () => {
         
         {/* --- PART 1: HOW WE DELIVER (The Creative Slider) --- */}
         <div className="text-center mb-44">
-          <p className="text-[#e30613] font-black tracking-[0.35em] text-[10px] mb-8 uppercase">
+          <p className="text-[#39b14a] font-black tracking-[0.35em] text-[10px] mb-8 uppercase">
             HOW WE DELIVER
           </p>
           <h2 className="text-[42px] md:text-[56px] font-[900] tracking-tight text-[#1a1a1a] leading-[1.05] mb-8">
@@ -79,7 +79,7 @@ const Solutions = () => {
               WHAT WE OFFER
             </p>
             <h2 className="text-[42px] md:text-[56px] font-[900] tracking-tight text-[#1a1a1a] leading-[1.05] mb-12">
-              First-Party <span className="text-[#e30613]">Performance Advertising</span> <br /> for Web and App
+              First-Party <span className="text-[#39b14a]">Performance Advertising</span> <br /> for Web and App
             </h2>
 
             {/* Pill Tabs */}
@@ -90,7 +90,7 @@ const Solutions = () => {
                   onClick={() => setActiveTab(key)}
                   className={`px-8 py-3.5 rounded-full text-[12px] font-black uppercase tracking-widest transition-all duration-300 ${
                     activeTab === key 
-                      ? "bg-[#e30613] text-white shadow-xl" 
+                      ? "bg-[#39b14a] text-white shadow-xl" 
                       : "text-black/50 hover:text-black"
                   }`}
                 >
@@ -116,7 +116,7 @@ const Solutions = () => {
                  <div className="relative z-10 w-full h-[60%] border border-white/5 rounded-3xl bg-white/[0.01] backdrop-blur-md flex flex-col items-center justify-center">
                     <div className="flex gap-2 mb-4">
                        {[1,2,3,4].map(i => (
-                         <motion.div key={i} animate={{ height: [20, 50, 20] }} transition={{ repeat: Infinity, duration: 1.5, delay: i*0.2 }} className="w-1.5 bg-[#e30613] rounded-full opacity-50" />
+                         <motion.div key={i} animate={{ height: [20, 50, 20] }} transition={{ repeat: Infinity, duration: 1.5, delay: i*0.2 }} className="w-1.5 bg-[#39b14a] rounded-full opacity-50" />
                        ))}
                     </div>
                     <span className="text-white/10 text-[9px] font-black tracking-[0.4em] uppercase">{activeTab} system active</span>

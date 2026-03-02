@@ -9,6 +9,7 @@ import CaseStudies from "@/components/CaseStudies";
 import HomeServices from "@/components/HomeServices";
 import HomeGalleryPreview from "@/components/gallery/HomeGalleryPreview";
 import JoinUsCTA from "@/components/about/JoinUsCTA";
+import OurThoughts from "@/components/OurThoughts";
 
 export default function Home() {
   return (
@@ -16,14 +17,17 @@ export default function Home() {
       <Hero />
       {/* <TrustedBy /> */}
       <HomeServices />
-      <ValueProposition />
+      
       <DeliveryAndOffer />
       {/* <TechShowcase /> */}
       {/* <Solutions /> */}
-      <Metrics />
+      {/* <Metrics /> */}
       <Testimonials />
+       <CaseStudies />
       <HomeGalleryPreview />
-      <CaseStudies />
+      <OurThoughts />
+      {/* <ValueProposition /> */}
+     
       <JoinUsCTA />
     </>
   );

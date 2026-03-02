@@ -30,39 +30,35 @@ const values = [
 
 export default function TeamValues() {
   return (
-    <section className="py-24 px-6 bg-[#0f172a]"> {/* Dark Theme like RTB House deep sections */}
+    <section className="py-24 px-6 bg-[#050505]">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-            The Principles of <span className="text-indigo-400">Our Craft</span>
+        <div className="text-center mb-24">
+          <h2 className="text-4xl md:text-7xl font-black mb-6 text-white uppercase tracking-tighter leading-none">
+            Principles of <span className="bg-gradient-to-r from-[#6900CC] to-[#39B14A] bg-clip-text text-transparent">Our Craft</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-500 text-xl max-w-2xl mx-auto font-medium">
             Our values are the algorithms that govern our company culture and client relationships.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {values.map((value, i) => (
-            <div 
-              key={i}
-              className="p-10 rounded-2xl bg-[#1e293b] border border-gray-800 hover:border-indigo-500/50 transition-all duration-300 group"
-            >
-              <div className="mb-6 text-indigo-400 group-hover:text-white transition-colors">
+            <div key={i} className="p-12 rounded-[2.5rem] bg-[#0f0f0f] border border-white/5 hover:border-[#6900CC]/50 transition-all group">
+              <div className="mb-8 text-[#39B14A] group-hover:text-white transition-colors">
                 {value.icon}
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-white">{value.title}</h3>
-              <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">
+              <h3 className="text-2xl font-black mb-4 text-white uppercase italic tracking-tight">{value.title}</h3>
+              <p className="text-gray-500 leading-relaxed font-medium group-hover:text-gray-300 transition-colors">
                 {value.desc}
               </p>
             </div>
           ))}
           
-          {/* Custom RTB Style Gradient Card */}
-          <div className="p-10 rounded-2xl bg-gradient-to-br from-indigo-600 to-purple-700 flex flex-col justify-center border border-indigo-500 shadow-lg shadow-indigo-500/20">
-             <h3 className="text-2xl font-bold text-white mb-2">Join the Future</h3>
-             <p className="text-indigo-100 text-sm mb-6">We are always looking for bold minds to join our journey.</p>
-             <a href="#careers" className="text-white font-bold flex items-center gap-2 group">
-               Connect with us <span className="group-hover:translate-x-2 transition-transform">→</span>
+          <div className="p-12 rounded-[2.5rem] bg-gradient-to-br from-[#6900CC] to-[#39B14A] flex flex-col justify-center shadow-2xl shadow-purple-900/20">
+             <h3 className="text-3xl font-black text-white mb-4 uppercase leading-tight">Join the <br /> Future</h3>
+             <p className="text-white/80 font-medium mb-8">We are always looking for bold minds to join our journey.</p>
+             <a href="/careers" className="text-white font-black uppercase tracking-widest text-sm flex items-center gap-2 group">
+               Connect with us <span className="group-hover:translate-x-3 transition-transform">→</span>
              </a>
           </div>
         </div>

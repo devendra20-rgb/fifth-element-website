@@ -1,112 +1,137 @@
 "use client";
+
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
-import Link from 'next/link';
+import { ArrowUpRight, BarChart3, Users, Zap } from "lucide-react";
+import Link from "next/link";
 
-const CaseStudies = () => {
-  const caseStudies = [
-    {
-      image:
-        "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=600&auto=format&fit=crop",
-      brand: "DriveZone",
-      title:
-        "Accelerating Growth for the U.K.’s Leading Automotive Marketplace",
-      offset: "md:mt-40",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=600&auto=format&fit=crop",
-      brand: "StyleSphere",
-      title: "AI-Driven Campaigns Deliver a 2X Revenue Boost for StyleSphere",
-      offset: "md:mt-0",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=600&auto=format&fit=crop",
-      brand: "Urban Steps",
-      title: "Expanding New Customer Reach with Intelligent Video Advertising",
-      offset: "md:-mt-20",
-    },
-  ];
+const caseStudies = [
+  {
+    id: 1,
+    title: "Global Tech Launch",
+    client: "Future Dynamics",
+    category: "Full-Funnel Growth",
+    stats: "+140% Conversion",
+    img: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=800",
+    color: "#6900CC",
+  },
+  {
+    id: 2,
+    title: "City-Wide OOH Takeover",
+    client: "Urban Wear",
+    category: "Outdoor Advertising",
+    stats: "2.4M Impressions",
+    img: "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=800",
+    color: "#39B14A",
+  },
+  {
+    id: 3,
+    title: "Experiential Brand Activation",
+    client: "Spark Beverages",
+    category: "Activations",
+    stats: "15k Engagements",
+    img: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=800",
+    color: "#6900CC",
+  },
+];
 
+export default function CaseStudiesSection() {
   return (
-    <section
-      className="py-24 md:py-40 bg-white"
-      style={{ fontFamily: '"Inter", sans-serif' }}
-    >
-      <div className="max-w-[1600px] mx-auto px-10">
-        {/* Header Section - Exact Image 18 Style */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-24"
-        >
-          <p className="text-[#1a1a1a] font-black tracking-[0.3em] text-[10px] uppercase mb-8">
-            CASE STUDIES
-          </p>
-          <h2 className="text-[42px] md:text-[54px] font-[900] tracking-tight text-[#1a1a1a] leading-tight mb-8">
-            Performance outcomes <br />{" "}
-            <span className="text-[#e30613]">across markets</span>
-          </h2>
-          <p className="text-[16px] text-[#5a5a5a] max-w-xl mx-auto font-medium mb-12">
-            No matter where you operate, we help you expand reach and results
-            online.
-          </p>
-          <Link href="/case-studies">
-            <button className="border border-gray-200 px-8 py-3 rounded-full text-[12px] font-black uppercase tracking-widest text-[#e30613] hover:bg-gray-50 transition">
-              Explore case studies
-            </button>
-          </Link>
-        </motion.div>
-
-        {/* Asymmetric Grid Layout - Exact Image 18 Alignment */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
-          {caseStudies.map((study, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.15, duration: 0.8 }}
-              className={`relative group cursor-pointer ${study.offset}`}
+    <section className="bg-white py-24 md:py-32 px-6 overflow-hidden">
+      <div className="max-w-[1400px] mx-auto">
+        
+        {/* Header Section */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+          <div className="max-w-2xl">
+            <motion.p 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              className="text-[#6900CC] font-bold uppercase tracking-[0.2em] text-sm mb-4"
             >
-              {/* Image Container with Rounded Corners */}
-              <div className="relative aspect-[4/5] rounded-[24px] overflow-hidden shadow-2xl">
-                <img
-                  src={study.image}
-                  alt={study.brand}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                {/* Gradient Overlay for Text Visibility */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              Proven Results
+            </motion.p>
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className="text-5xl md:text-7xl font-black text-black leading-none"
+            >
+              Case <span className="text-gray-300">Studies.</span>
+            </motion.h2>
+          </div>
+          
+          <motion.p 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="text-gray-500 text-lg md:max-w-xs font-medium"
+          >
+            How we turned ambitious ideas into <span className="text-[#39B14A]">measurable success stories</span>.
+          </motion.p>
+        </div>
 
-                {/* Content Overlayed on Image */}
-                <div className="absolute inset-0 p-10 flex flex-col justify-end">
-                  <div className="flex justify-between items-start mb-6">
-                    <h4 className="text-white text-[24px] font-black uppercase tracking-tighter">
-                      {study.brand}
-                    </h4>
-                    <ArrowUpRight
-                      className="text-white opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0"
-                      size={28}
-                    />
-                  </div>
-                  <p className="text-white/80 text-[14px] font-bold leading-relaxed line-clamp-2">
-                    {study.title}
-                  </p>
-                </div>
+        {/* Bento-style Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 h-full">
+          
+          {/* Large Featured Case - 1 */}
+          <motion.div 
+            whileHover={{ y: -10 }}
+            className="md:col-span-8 group relative aspect-[16/10] md:aspect-auto md:h-[600px] overflow-hidden rounded-[2.5rem] bg-gray-100 shadow-sm border border-gray-100"
+          >
+            <img src={caseStudies[0].img} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-8 md:p-12 flex flex-col justify-end">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="px-4 py-1.5 bg-[#6900CC] text-white text-xs font-bold rounded-full uppercase tracking-widest">{caseStudies[0].category}</span>
+                <span className="text-white font-bold text-xl">{caseStudies[0].stats}</span>
               </div>
-            </motion.div>
-          ))}
+              <h3 className="text-3xl md:text-5xl font-black text-white mb-6 leading-tight">{caseStudies[0].title}</h3>
+              <Link href={`/case-studies/${caseStudies[0].id}`} className="w-fit p-4 bg-white rounded-full hover:bg-[#39B14A] hover:text-white transition-all">
+                <ArrowUpRight size={28} />
+              </Link>
+            </div>
+          </motion.div>
+
+          {/* Sidebar Cases Stack - 2 & 3 */}
+          <div className="md:col-span-4 flex flex-col gap-6">
+            {caseStudies.slice(1).map((study) => (
+              <motion.div 
+                key={study.id}
+                whileHover={{ y: -5 }}
+                className="flex-1 group relative overflow-hidden rounded-[2rem] bg-gray-50 p-8 border border-gray-100"
+              >
+                <div className="relative z-10 flex flex-col h-full justify-between">
+                  <div>
+                    <span className="text-xs font-black uppercase tracking-widest" style={{ color: study.color }}>{study.category}</span>
+                    <h3 className="text-2xl font-black text-black mt-4 leading-tight group-hover:text-[#6900CC] transition-colors">{study.title}</h3>
+                  </div>
+                  <div className="mt-8 flex items-end justify-between">
+                    <div className="flex flex-col">
+                      <span className="text-3xl font-black text-black">{study.stats.split(' ')[0]}</span>
+                      <span className="text-xs font-bold text-gray-400 uppercase tracking-tighter">{study.stats.split(' ')[1]}</span>
+                    </div>
+                    <Link href={`/case-studies/${study.id}`} className="p-3 bg-white border border-gray-200 rounded-full group-hover:bg-black group-hover:text-white transition-all shadow-sm">
+                      <ArrowUpRight size={20} />
+                    </Link>
+                  </div>
+                </div>
+                {/* Subtle Image Reveal on Hover */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                   <img src={study.img} className="w-full h-full object-cover" alt="" />
+                </div>
+              </motion.div>
+            ))}
+
+            {/* View All Button Card */}
+            <Link href="/case-studies" className="group h-24 rounded-full border-2 border-dashed border-gray-200 flex items-center justify-center gap-4 hover:border-[#39B14A] transition-all">
+              <span className="font-black uppercase tracking-widest text-gray-400 group-hover:text-[#39B14A]">View All Works</span>
+              <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center group-hover:bg-[#39B14A] group-hover:text-white transition-all">
+                <ArrowUpRight size={20} />
+              </div>
+            </Link>
+          </div>
         </div>
       </div>
     </section>
   );
-};
-
-export default CaseStudies;
+}
 
 // "use client";
 // import React from "react";
