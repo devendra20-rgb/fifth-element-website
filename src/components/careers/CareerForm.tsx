@@ -55,9 +55,9 @@ export default function CareerForm() {
       
       <div className="mb-16 relative z-10">
         <span className="text-[#6900CC] font-black uppercase tracking-[0.3em] text-xs mb-4 block">Joining 5th Element</span>
-        <h2 className="text-4xl md:text-6xl font-black text-[#0f172a] mb-4 uppercase tracking-tighter italic">
-          Apply Now
-        </h2>
+        <h2 className="text-4xl md:text-7xl font-black text-[#0f172a] mb-4 uppercase tracking-tighter">
+  Apply Now
+</h2>
         <p className="text-gray-400 text-lg font-medium">
           Fill out the details below and attach your latest CV.
         </p>

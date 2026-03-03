@@ -39,18 +39,17 @@ export default function CaseStudiesSection() {
   return (
     <section className="bg-white py-24 md:py-32 px-6 overflow-hidden">
       <div className="max-w-[1400px] mx-auto">
-        
         {/* Header Section */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
           <div className="max-w-2xl">
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               className="text-[#6900CC] font-bold uppercase tracking-[0.2em] text-sm mb-4"
             >
               Proven Results
             </motion.p>
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               className="text-5xl md:text-7xl font-black text-black leading-none"
@@ -58,32 +57,45 @@ export default function CaseStudiesSection() {
               Case <span className="text-gray-300">Studies.</span>
             </motion.h2>
           </div>
-          
-          <motion.p 
+
+          <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             className="text-gray-500 text-lg md:max-w-xs font-medium"
           >
-            How we turned ambitious ideas into <span className="text-[#39B14A]">measurable success stories</span>.
+            How we turned ambitious ideas into{" "}
+            <span className="text-[#39B14A]">measurable success stories</span>.
           </motion.p>
         </div>
 
         {/* Bento-style Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 h-full">
-          
           {/* Large Featured Case - 1 */}
-          <motion.div 
+          <motion.div
             whileHover={{ y: -10 }}
             className="md:col-span-8 group relative aspect-[16/10] md:aspect-auto md:h-[600px] overflow-hidden rounded-[2.5rem] bg-gray-100 shadow-sm border border-gray-100"
           >
-            <img src={caseStudies[0].img} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="" />
+            <img
+              src={caseStudies[0].img}
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              alt=""
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-8 md:p-12 flex flex-col justify-end">
               <div className="flex items-center gap-3 mb-4">
-                <span className="px-4 py-1.5 bg-[#6900CC] text-white text-xs font-bold rounded-full uppercase tracking-widest">{caseStudies[0].category}</span>
-                <span className="text-white font-bold text-xl">{caseStudies[0].stats}</span>
+                <span className="px-4 py-1.5 bg-[#6900CC] text-white text-xs font-bold rounded-full uppercase tracking-widest">
+                  {caseStudies[0].category}
+                </span>
+                <span className="text-white font-bold text-xl">
+                  {caseStudies[0].stats}
+                </span>
               </div>
-              <h3 className="text-3xl md:text-5xl font-black text-white mb-6 leading-tight">{caseStudies[0].title}</h3>
-              <Link href={`/case-studies/${caseStudies[0].id}`} className="w-fit p-4 bg-white rounded-full hover:bg-[#39B14A] hover:text-white transition-all">
+              <h3 className="text-3xl md:text-5xl font-black text-white mb-6 leading-tight">
+                {caseStudies[0].title}
+              </h3>
+              <Link
+                href={`/case-studies/${caseStudies[0].id}`}
+                className="w-fit p-4 bg-white rounded-full hover:bg-[#39B14A] hover:text-white transition-all"
+              >
                 <ArrowUpRight size={28} />
               </Link>
             </div>
@@ -92,39 +104,66 @@ export default function CaseStudiesSection() {
           {/* Sidebar Cases Stack - 2 & 3 */}
           <div className="md:col-span-4 flex flex-col gap-6">
             {caseStudies.slice(1).map((study) => (
-              <motion.div 
+              <motion.div
                 key={study.id}
                 whileHover={{ y: -5 }}
                 className="flex-1 group relative overflow-hidden rounded-[2rem] bg-gray-50 p-8 border border-gray-100"
               >
                 <div className="relative z-10 flex flex-col h-full justify-between">
                   <div>
-                    <span className="text-xs font-black uppercase tracking-widest" style={{ color: study.color }}>{study.category}</span>
-                    <h3 className="text-2xl font-black text-black mt-4 leading-tight group-hover:text-[#6900CC] transition-colors">{study.title}</h3>
+                    <span
+                      className="text-xs font-black uppercase tracking-widest"
+                      style={{ color: study.color }}
+                    >
+                      {study.category}
+                    </span>
+                    <h3 className="text-2xl font-black text-black mt-4 leading-tight group-hover:text-[#6900CC] transition-colors">
+                      {study.title}
+                    </h3>
                   </div>
                   <div className="mt-8 flex items-end justify-between">
                     <div className="flex flex-col">
-                      <span className="text-3xl font-black text-black">{study.stats.split(' ')[0]}</span>
-                      <span className="text-xs font-bold text-gray-400 uppercase tracking-tighter">{study.stats.split(' ')[1]}</span>
+                      <span className="text-3xl font-black text-black">
+                        {study.stats.split(" ")[0]}
+                      </span>
+                      <span className="text-xs font-bold text-gray-400 uppercase tracking-tighter">
+                        {study.stats.split(" ")[1]}
+                      </span>
                     </div>
-                    <Link href={`/case-studies/${study.id}`} className="p-3 bg-white border border-gray-200 rounded-full group-hover:bg-black group-hover:text-white transition-all shadow-sm">
+                    <Link
+                      href={`/case-studies/${study.id}`}
+                      className="p-3 bg-white border border-gray-200 rounded-full group-hover:bg-black group-hover:text-white transition-all shadow-sm"
+                    >
                       <ArrowUpRight size={20} />
                     </Link>
                   </div>
                 </div>
                 {/* Subtle Image Reveal on Hover */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500">
-                   <img src={study.img} className="w-full h-full object-cover" alt="" />
+                  <img
+                    src={study.img}
+                    className="w-full h-full object-cover"
+                    alt=""
+                  />
                 </div>
               </motion.div>
             ))}
 
             {/* View All Button Card */}
-            <Link href="/case-studies" className="group h-24 rounded-full border-2 border-dashed border-gray-200 flex items-center justify-center gap-4 hover:border-[#39B14A] transition-all">
-              <span className="font-black uppercase tracking-widest text-gray-400 group-hover:text-[#39B14A]">View All Works</span>
-              <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center group-hover:bg-[#39B14A] group-hover:text-white transition-all">
-                <ArrowUpRight size={20} />
-              </div>
+            {/* View All Button Card - Updated to Premium Gradient Style */}
+            <Link href="/case-studies" className="mt-4 flex justify-center">
+              <button className="group relative inline-flex items-center gap-3 px-12 py-5 bg-gradient-to-r from-[#6900CC] to-[#39B14A] text-white text-lg font-black uppercase tracking-widest rounded-full shadow-[0_10px_40px_rgba(105,0,204,0.4)] transition-all duration-300 overflow-hidden">
+                {/* White Shine Effect on Hover */}
+                <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12" />
+
+                <span className="relative z-10">View All Works</span>
+                <span className="relative z-10 group-hover:translate-x-2 transition-transform duration-300">
+                  →
+                </span>
+
+                {/* Subtle Glow Overlay */}
+                <div className="absolute inset-0 rounded-full blur-xl bg-gradient-to-r from-[#6900CC] to-[#39B14A] opacity-0 group-hover:opacity-40 transition-opacity duration-500" />
+              </button>
             </Link>
           </div>
         </div>
