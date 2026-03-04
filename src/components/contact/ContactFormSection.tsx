@@ -42,7 +42,7 @@ export default function ContactFormSection() {
         {/* Left Side: Contact Info - Dark Themed */}
         <div className="lg:col-span-4 bg-[#050505] p-10 md:p-16 text-white flex flex-col justify-between relative overflow-hidden">
           <div className="relative z-10">
-            <h3 className="text-4xl font-black mb-12 uppercase italic leading-none tracking-tighter">
+            <h3 className="text-4xl font-black mb-12 uppercase  leading-none tracking-tighter">
               Get in <br /> <span className="text-[#39B14A]">Touch</span>
             </h3>
             <div className="space-y-12">

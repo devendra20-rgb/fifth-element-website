@@ -4,7 +4,7 @@ export default function EventGallery() {
     <section className="py-24 bg-gray-50 px-6">
       <div className="max-w-[1600px] mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-black text-gray-900 uppercase italic">Events in Action</h2>
+          <h2 className="text-4xl font-black text-gray-900 uppercase ">Events in Action</h2>
           <p className="text-gray-500 mt-2">Physical experiences that drove digital conversations.</p>
         </div>
         

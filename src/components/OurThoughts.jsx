@@ -107,7 +107,7 @@ export default function OurThoughts() {
 
                 {/* Bottom Content */}
                 <div className="space-y-6">
-                  <p className="text-white/90 text-lg md:text-xl font-medium italic leading-relaxed">
+                  <p className="text-white/90 text-lg md:text-xl font-medium  leading-relaxed">
                     "{item.thought}"
                   </p>
 

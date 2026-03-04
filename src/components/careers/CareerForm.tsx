@@ -27,7 +27,7 @@ export default function CareerForm() {
       <div className="max-w-3xl mx-auto bg-white p-12 rounded-[3rem] shadow-2xl text-center border border-gray-100 relative overflow-hidden">
         {/* Success Glow */}
         <div className="absolute top-0 right-0 w-32 h-32 bg-[#39B14A]/10 rounded-full blur-3xl" />
-        
+
         <div className="w-24 h-24 bg-[#39B14A]/10 text-[#39B14A] rounded-full flex items-center justify-center mx-auto mb-8 border border-[#39B14A]/20">
           <CheckCircle size={48} />
         </div>
@@ -35,7 +35,7 @@ export default function CareerForm() {
           Application Received!
         </h2>
         <p className="text-gray-500 text-lg mb-8 font-medium">
-          Thank you for your interest. Our talent acquisition team will review 
+          Thank you for your interest. Our talent acquisition team will review
           your profile and get back to you shortly.
         </p>
         <button
@@ -52,12 +52,14 @@ export default function CareerForm() {
     <div className="max-w-5xl mx-auto bg-white p-8 md:p-20 rounded-[4rem] shadow-2xl border border-gray-100 relative overflow-hidden">
       {/* Decorative Corner Glow */}
       <div className="absolute -top-20 -right-20 w-64 h-64 bg-[#6900CC]/5 rounded-full blur-[80px]" />
-      
+
       <div className="mb-16 relative z-10">
-        <span className="text-[#6900CC] font-black uppercase tracking-[0.3em] text-xs mb-4 block">Joining 5th Element</span>
+        <span className="text-[#6900CC] font-black uppercase tracking-[0.3em] text-xs mb-4 block">
+          Joining 5th Element
+        </span>
         <h2 className="text-4xl md:text-7xl font-black text-[#0f172a] mb-4 uppercase tracking-tighter">
-  Apply Now
-</h2>
+          Apply Now
+        </h2>
         <p className="text-gray-400 text-lg font-medium">
           Fill out the details below and attach your latest CV.
         </p>
@@ -124,7 +126,7 @@ export default function CareerForm() {
               <option>Account Manager</option>
             </select>
             <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-[#6900CC]">
-               ▼
+              ▼
             </div>
           </div>
         </div>
@@ -149,7 +151,9 @@ export default function CareerForm() {
               <p className="text-gray-500 font-black uppercase text-xs tracking-widest">
                 Upload Resume
               </p>
-              <p className="text-[10px] text-gray-400 mt-2 uppercase">PDF, DOC up to 10MB</p>
+              <p className="text-[10px] text-gray-400 mt-2 uppercase">
+                PDF, DOC up to 10MB
+              </p>
             </div>
           </div>
         </div>

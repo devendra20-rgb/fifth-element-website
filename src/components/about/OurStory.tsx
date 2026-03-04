@@ -31,7 +31,7 @@ export default function OurStory() {
 
             {/* Final Statement Card */}
             <div className="bg-gradient-to-br from-[#6900CC] to-[#39B14A] p-12 rounded-[2.5rem] shadow-2xl shadow-purple-900/20">
-              <p className="text-2xl font-black text-white leading-tight italic">
+              <p className="text-2xl font-black text-white leading-tight ">
                 "We don't just predict the future of technology; we write the code that powers it."
               </p>
             </div>

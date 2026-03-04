@@ -40,7 +40,7 @@ export default function GalleryHero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
-          className="text-lg md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed font-medium italic"
+          className="text-lg md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed font-medium "
         >
           "A visual journey through the campaigns, events, and activations that 
           defined brand success across the nation."

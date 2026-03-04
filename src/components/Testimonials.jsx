@@ -204,7 +204,7 @@ export default Testimonials;
 //           >
 //             {/* Left: Quote + Author */}
 //             <div className="text-left">
-//               <p className="text-xl md:text-2xl leading-relaxed text-gray-800 italic mb-8">
+//               <p className="text-xl md:text-2xl leading-relaxed text-gray-800  mb-8">
 //                 "{testimonials[currentIndex].quote}"
 //               </p>
 //               <p className="font-semibold text-lg text-black">{testimonials[currentIndex].author}</p>
@@ -341,7 +341,7 @@ export default Testimonials;
 //                   alt="brand logo"
 //                   className="h-10 w-auto object-contain mb-12 grayscale-0"
 //                 />
-//                 <h3 className="text-[24px] md:text-[32px] font-medium leading-[1.5] text-[#1a1a1a] mb-12 italic">
+//                 <h3 className="text-[24px] md:text-[32px] font-medium leading-[1.5] text-[#1a1a1a] mb-12 ">
 //                   "{testimonials[currentIndex].quote}"
 //                 </h3>
 //                 <div>
@@ -364,7 +364,7 @@ export default Testimonials;
 //                   alt="next logo"
 //                   className="h-10 w-auto object-contain mb-12"
 //                 />
-//                 <h3 className="text-[24px] md:text-[32px] font-medium leading-[1.5] text-[#1a1a1a] mb-12 italic">
+//                 <h3 className="text-[24px] md:text-[32px] font-medium leading-[1.5] text-[#1a1a1a] mb-12 ">
 //                   "{testimonials[(currentIndex + 1) % testimonials.length].quote.substring(0, 150)}..."
 //                 </h3>
 //                 <button className="bg-red-200 text-white px-10 py-4 rounded-full text-[13px] font-black uppercase tracking-widest">

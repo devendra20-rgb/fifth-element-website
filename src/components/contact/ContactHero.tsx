@@ -39,7 +39,7 @@ export default function ContactHero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
-          className="text-lg md:text-2xl text-gray-400 max-w-4xl mx-auto leading-relaxed font-medium italic"
+          className="text-lg md:text-2xl text-gray-400 max-w-4xl mx-auto leading-relaxed font-medium "
         >
           "Expertise is just a message away. Reach out to discuss your goals."
         </motion.p>

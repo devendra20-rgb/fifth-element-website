@@ -13,7 +13,7 @@ export default function BrandingDetailed() {
             
             <div className="space-y-8">
               <div className="bg-gray-50 p-8 rounded-[2rem] border-l-8 border-[#6900CC]">
-                <h4 className="text-xl font-bold text-gray-900 mb-4 italic">Our Solution</h4>
+                <h4 className="text-xl font-bold text-gray-900 mb-4 ">Our Solution</h4>
                 <ul className="space-y-3">
                   {["Complete Visual Identity Overhaul", "Tone of Voice Development", "Multi-channel Content Strategy"].map((item, i) => (
                     <li key={i} className="flex items-center gap-3 text-gray-700 font-bold">

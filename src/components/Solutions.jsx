@@ -131,7 +131,7 @@ const Solutions = () => {
                 <p className="text-[19px] leading-[1.7] text-[#5a5a5a] font-medium mb-8">
                   {offers[activeTab].desc}
                 </p>
-                <p className="text-[16px] leading-relaxed text-[#1a1a1a]/30 font-medium italic">
+                <p className="text-[16px] leading-relaxed text-[#1a1a1a]/30 font-medium ">
                   {offers[activeTab].sub}
                 </p>
               </div>
