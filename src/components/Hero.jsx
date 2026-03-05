@@ -348,35 +348,84 @@ const Hero = () => {
 
             {/* RIGHT SIDE: 4 COLUMNS (IMAGE) */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.2 }}
+              initial={{ opacity: 0, scale: 0.8, x: 50 }}
+              animate={{ opacity: 1, scale: 1, x: 0 }}
+              transition={{ duration: 1.2, ease: "easeOut" }}
               className="lg:col-span-4 relative flex justify-center lg:justify-end"
             >
-              <div className="relative w-full max-w-[450px] aspect-[4/5]">
-                {/* Image Glow behind */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#6900CC]/20 to-[#39B14A]/20 blur-3xl -z-10 animate-pulse" />
+              <div className="relative w-full max-w-[450px] aspect-[4/5] group">
+                {/* 1. Dynamic Animated Gradient Border (Spinning Effect) */}
+                <div className="absolute -inset-1 bg-gradient-to-r from-[#6900CC] via-[#39B14A] to-[#6900CC] rounded-[2.6rem] blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-gradient-xy"></div>
 
-                {/* Main Image */}
-                <img
-                  src="/Hero-Photo.jpeg"
-                  alt="Marketing Impact"
-                  className="w-full h-full object-cover rounded-[2.5rem] border border-white/10 shadow-2xl"
-                />
+                {/* 2. Floating Background Particles (Behind Image) */}
+                <div className="absolute inset-0 overflow-hidden rounded-[2.5rem] -z-10">
+                  {[...Array(6)].map((_, i) => (
+                    <motion.div
+                      key={i}
+                      animate={{
+                        y: [0, -100, 0],
+                        x: [0, 30, 0],
+                        opacity: [0, 0.5, 0],
+                      }}
+                      transition={{
+                        duration: Math.random() * 5 + 5,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
+                      className="absolute w-1 h-1 bg-white rounded-full"
+                      style={{
+                        left: `${Math.random() * 100}%`,
+                        top: `${Math.random() * 100}%`,
+                      }}
+                    />
+                  ))}
+                </div>
 
-                {/* Floating Stats Element (Optional techy touch) */}
+                {/* 3. Main Image with Hover Tilt & Scale */}
                 <motion.div
-                  animate={{ y: [0, -15, 0] }}
-                  transition={{ duration: 4, repeat: Infinity }}
-                  className="absolute -bottom-6 -left-6 bg-black/80 backdrop-blur-xl border border-white/10 p-6 rounded-2xl shadow-2xl"
+                  whileHover={{ scale: 1.02, rotateY: -5, rotateX: 5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  className="relative w-full h-full rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl z-10"
                 >
-                  <p className="text-[#39B14A] font-black text-2xl tracking-tighter">
-                    100%
-                  </p>
-                  <p className="text-white/40 text-[10px] uppercase font-bold tracking-widest">
-                    Growth Focused
-                  </p>
+                  <img
+                    src="/Hero-Photo.jpeg"
+                    alt="Marketing Impact"
+                    className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
+                  />
+                  {/* Overlay Shine */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-[#6900CC]/10 via-transparent to-[#39B14A]/10 pointer-events-none" />
                 </motion.div>
+
+                {/* 4. Interactive Floating Badge */}
+                {/* <motion.div
+                  animate={{
+                    y: [0, -20, 0],
+                    rotate: [0, 2, 0],
+                  }}
+                  transition={{
+                    duration: 5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="absolute -bottom-8 -left-8 bg-black/60 backdrop-blur-2xl border border-white/20 p-5 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-20 group-hover:border-[#39B14A]/50 transition-colors"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-2xl bg-[#39B14A]/20 flex items-center justify-center">
+                      <div className="w-3 h-3 bg-[#39B14A] rounded-full animate-ping" />
+                    </div>
+                    <div>
+                      <p className="text-[#39B14A] font-black text-2xl tracking-tighter leading-none">
+                        100%
+                      </p>
+                      <p className="text-white/40 text-[9px] uppercase font-black tracking-[0.2em]">
+                        Growth Driven
+                      </p>
+                    </div>
+                  </div>
+                </motion.div> */}
+
+                {/* 5. Decorative Tech Ring */}
+                <div className="absolute -top-10 -right-10 w-32 h-32 border border-white/5 rounded-full animate-[spin_10s_linear_infinite] border-dashed" />
               </div>
             </motion.div>
           </div>
