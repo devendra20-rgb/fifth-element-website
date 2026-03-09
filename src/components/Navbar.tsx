@@ -116,7 +116,7 @@ const Navbar = () => {
                   : "border-white/30 text-white hover:bg-white hover:text-black"
               }`}
             >
-              Contact us
+              Start a Project 
             </Link>
 
             <button

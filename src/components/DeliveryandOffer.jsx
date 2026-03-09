@@ -8,23 +8,31 @@ const DeliveryAndOffer = () => {
     {
       id: "discovery",
       label: "Discovery",
-      title: "Put your brand in front of the right audience",
-      desc: "We build reach through the right mix of digital media, outdoor visibility, and launch moments-so your brand becomes visible where it matters.",
+      // title: "Put your brand in front of the right audience",
+      desc: "Put your brand in front of the right audience, in the right environment. We build reach through a precision mix of digital media, outdoor placements, and high-impact launch moments so your brand shows up where it matters.",
       bullets: ["Channel mix", "Audience targeting", "High-impact placements"],
     },
     {
       id: "engagement",
       label: "Engagement",
-      title: "Turn attention into interest",
-      desc: "We keep users engaged using strong creatives, clear messaging, and experiences that make the brand feel real-online and on-ground.",
-      bullets: ["Content + creative system", "Activation hooks", "Retargeting signals"],
+      // title: "Turn attention into interest",
+      desc: "Turn awareness into intent. Through compelling creative, immersive activations, and smart retargeting, we give your audience reasons to lean in and stay in.",
+      bullets: [
+        "Creative campaigns",
+        "Experiential activations",
+        "Retargeting strategies",
+      ],
     },
     {
       id: "conversion",
       label: "Conversion",
-      title: "Drive actions that matter",
-      desc: "We optimize the journey to push the next step-leads, sales, installs, bookings, or footfall-supported by tracking and constant improvements.",
-      bullets: ["Funnel optimization", "Landing page alignment", "Performance reporting"],
+      // title: "Drive actions that matter",
+      desc: "Close the loop with performance. We track, optimise, and report on what's working then push harder on what drives real business outcomes.",
+      bullets: [
+        "Performance media",
+        "Conversion optimisation",
+        "Measurable ROI",
+      ],
     },
   ];
 
@@ -49,15 +57,21 @@ const DeliveryAndOffer = () => {
           className="text-center mb-16"
         >
           <p className="text-sm font-semibold uppercase tracking-widest text-gray-400 mb-6">
-            OUR GROWTH LOOP
+            How We Work
           </p>
           <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 text-white">
-            Customized <span className="bg-gradient-to-r from-[#6900CC] to-[#39B14A] bg-clip-text text-transparent">Full-Funnel</span>
+            A full-funnel{" "}
+            <span className="bg-gradient-to-r from-[#6900CC] to-[#39B14A] bg-clip-text text-transparent">
+              approach built for
+            </span>
             <br />
-            Growth Loop
+            the way people buy in MENA.
           </h2>
           <p className="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            We combine digital, activations, and OOH to build awareness, spark interest, and drive measurable conversions.
+            Most agencies hand off between disciplines. We don't. Our digital,
+            activation, and OOH capabilities are designed to feed each other
+            building awareness, sparking interest, and driving measurable
+            conversions in a single connected loop.
           </p>
         </motion.div>
 
@@ -103,7 +117,7 @@ const DeliveryAndOffer = () => {
               <p className="text-lg md:text-xl leading-relaxed text-gray-200">
                 {currentTab?.desc}
               </p>
-              
+
               <div className="flex flex-wrap gap-x-6 gap-y-2 pt-4">
                 {currentTab?.bullets.map((bullet, idx) => (
                   <div key={idx} className="flex items-center gap-2">

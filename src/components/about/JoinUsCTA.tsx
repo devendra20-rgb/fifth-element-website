@@ -6,38 +6,41 @@ import { motion } from "framer-motion";
 export default function JoinUsCTA() {
   return (
     <section className="py-24 px-6 bg-[#050505] text-center border-t border-white/5 relative overflow-hidden">
-      
       {/* 🔥 HIGH-VISIBILITY THEME GLOW */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Left Purple Glow */}
         <div className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-[#6900CC]/40 rounded-full blur-[130px] animate-pulse" />
-        
+
         {/* Right Green Glow */}
-        <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-[#39B14A]/30 rounded-full blur-[130px] animate-pulse" style={{ animationDelay: '1s' }} />
-        
+        <div
+          className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-[#39B14A]/30 rounded-full blur-[130px] animate-pulse"
+          style={{ animationDelay: "1s" }}
+        />
+
         {/* Center Mesh/Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-tr from-[#6900CC]/10 via-transparent to-[#39B14A]/10 opacity-60" />
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto">
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           className="text-4xl md:text-6xl font-black mb-8 text-white tracking-tight"
         >
-          Let’s build your <br />
+          Your next campaign <br />
           <span className="bg-gradient-to-r from-[#6900CC] to-[#39B14A] bg-clip-text text-transparent drop-shadow-[0_5px_15px_rgba(105,0,204,0.4)]">
-            Next Big Campaign
+            starts with a conversation.
           </span>
         </motion.h2>
-        
-        <motion.p 
+
+        <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
           className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto font-medium leading-relaxed"
         >
-          Tell us your goal and your market. We’ll recommend the best mix across branding, performance, activations, and outdoor.
+          Tell us your brand, your market, your goal. We'll tell you exactly how
+          we'd approach it and why.
         </motion.p>
 
         <motion.div
@@ -51,9 +54,11 @@ export default function JoinUsCTA() {
           >
             {/* White Shine Effect on Hover */}
             <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500 skew-x-12" />
-            
+
             <span className="relative z-10">Get in Touch</span>
-            <span className="relative z-10 group-hover:translate-x-1 transition-transform">→</span>
+            <span className="relative z-10 group-hover:translate-x-1 transition-transform">
+              →
+            </span>
           </a>
         </motion.div>
       </div>

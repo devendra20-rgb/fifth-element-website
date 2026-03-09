@@ -303,6 +303,70 @@ const Hero = () => {
       {/* 🧠 MAIN CONTENT CONTAINER */}
       <div className="relative z-10 flex-grow flex flex-col justify-center pt-32 md:pt-40">
         <div className="max-w-[1600px] mx-auto px-10 md:px-20 w-full relative">
+          {/* ⚡ PARTICLES MOVE ONLY INSIDE CONTENT AREA */}
+          <div className="absolute right-10 top-0 w-[50%] h-[550px] pointer-events-none opacity-60">
+            {/* Background Particles - Higher Density */}
+            {[...Array(40)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-[2px] h-[2px] bg-white rounded-full"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                }}
+                animate={{
+                  y: [0, -30, 0],
+                  opacity: [0.2, 0.7, 0.2],
+                  scale: [1, 1.8, 1],
+                }}
+                transition={{
+                  duration: Math.random() * 4 + 3,
+                  repeat: Infinity,
+                  delay: Math.random() * 5,
+                }}
+              />
+            ))}
+            {/* Signature Wave Line behind text */}
+            <svg className="w-full h-full" viewBox="0 0 400 500" fill="none">
+              <motion.path
+                d="M400 50 Q 200 250 400 450"
+                stroke="url(#grad1)"
+                strokeWidth="2"
+                initial={{ pathLength: 0, opacity: 0 }}
+                animate={{ pathLength: 1, opacity: 0.8 }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                }}
+              />
+              <motion.path
+                d="M380 80 Q 230 250 380 420"
+                stroke="url(#grad2)"
+                strokeWidth="1.5"
+                initial={{ pathLength: 0, opacity: 0 }}
+                animate={{ pathLength: 1, opacity: 0.4 }}
+                transition={{
+                  duration: 7,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  delay: 1,
+                }}
+              />
+              <defs>
+                <linearGradient id="grad1" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#39b14a" />
+                  <stop offset="100%" stopColor="#9333ea" />
+                </linearGradient>
+                <linearGradient id="grad2" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#3b82f6" />
+                  <stop offset="100%" stopColor="#9333ea" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+        <div className="max-w-[1600px] mx-auto px-10 md:px-20 w-full relative">
           {/* ⚡ GRID SYSTEM: 8 (Text) + 4 (Image) */}
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             {/* LEFT SIDE: 8 COLUMNS (TEXT) */}
@@ -313,32 +377,37 @@ const Hero = () => {
               className="lg:col-span-8 relative z-20 text-left"
             >
               <p className="text-[#39b14a] tracking-[0.45em] text-[12px] font-[900] mb-8 uppercase">
-                Grow faster - without losing control
+                Grow faster - Intelligence Behind Every Impression
               </p>
 
               <h1 className="text-white text-[44px] md:text-[68px] lg:text-[84px] font-[900] leading-[1.05] tracking-tight mb-8 uppercase">
-                We connect digital, <br /> activations,
-                <span className="bg-gradient-to-r from-[#6900CC] to-[#39B14A] bg-clip-text text-transparent block">
-                  and OOH-seamlessly
-                </span>
+                Where Art Meets Algorithm
               </h1>
+              <span className="bg-gradient-to-r from-[#6900CC] to-[#39B14A] bg-clip-text text-transparent block text-[18px] md:text-[28px] lg:text-[32px] font-bold leading-[1.2] mb-12 max-w-4xl tracking-tight">
+                We blend creativity & data across Digital, DOOH, Brand
+                Activations & Influencers to deliver Attention, Visibility and
+                Measurable Growth
+              </span>
 
-              <p className="text-white/40 text-[18px] md:text-[22px] max-w-xl font-medium mb-12 leading-relaxed">
+              {/* <p className="text-white/40 text-[18px] md:text-[22px] max-w-xl font-medium mb-12 leading-relaxed">
                 From planning to execution, we keep your brand consistent
                 everywhere it shows up.
-              </p>
+              </p> */}
 
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 whileHover={{ scale: 1.05 }}
+                className="flex justify-start"
               >
                 <a
                   href="/contact"
-                  className="group relative inline-flex items-center gap-3 px-12 py-5 bg-gradient-to-r from-[#6900CC] to-[#39B14A] text-white text-xl font-black uppercase tracking-widest rounded-full shadow-[0_10px_40px_rgba(105,0,204,0.4)] transition-all duration-300 overflow-hidden"
+                  className="group relative inline-flex items-center gap-2 md:gap-3 px-8 py-4 md:px-12 md:py-5 bg-gradient-to-r from-[#6900CC] to-[#39B14A] text-white text-base md:text-xl font-black uppercase tracking-widest rounded-full shadow-[0_10px_30px_rgba(105,0,204,0.3)] md:shadow-[0_10px_40px_rgba(105,0,204,0.4)] transition-all duration-300 overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500 skew-x-12" />
-                  <span className="relative z-10">Start a Project</span>
+                  <span className="relative z-10 whitespace-nowrap">
+                    Let&apos;s Build Something
+                  </span>
                   <span className="relative z-10 group-hover:translate-x-1 transition-transform">
                     →
                   </span>
@@ -346,18 +415,15 @@ const Hero = () => {
               </motion.div>
             </motion.div>
 
-            {/* RIGHT SIDE: 4 COLUMNS (IMAGE) */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, scale: 0.8, x: 50 }}
               animate={{ opacity: 1, scale: 1, x: 0 }}
               transition={{ duration: 1.2, ease: "easeOut" }}
               className="lg:col-span-4 relative flex justify-center lg:justify-end"
             >
               <div className="relative w-full max-w-[450px] aspect-[4/5] group">
-                {/* 1. Dynamic Animated Gradient Border (Spinning Effect) */}
                 <div className="absolute -inset-1 bg-gradient-to-r from-[#6900CC] via-[#39B14A] to-[#6900CC] rounded-[2.6rem] blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-gradient-xy"></div>
 
-                {/* 2. Floating Background Particles (Behind Image) */}
                 <div className="absolute inset-0 overflow-hidden rounded-[2.5rem] -z-10">
                   {[...Array(6)].map((_, i) => (
                     <motion.div
@@ -381,7 +447,6 @@ const Hero = () => {
                   ))}
                 </div>
 
-                {/* 3. Main Image with Hover Tilt & Scale */}
                 <motion.div
                   whileHover={{ scale: 1.02, rotateY: -5, rotateX: 5 }}
                   transition={{ type: "spring", stiffness: 300 }}
@@ -392,42 +457,12 @@ const Hero = () => {
                     alt="Marketing Impact"
                     className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
                   />
-                  {/* Overlay Shine */}
                   <div className="absolute inset-0 bg-gradient-to-tr from-[#6900CC]/10 via-transparent to-[#39B14A]/10 pointer-events-none" />
                 </motion.div>
 
-                {/* 4. Interactive Floating Badge */}
-                {/* <motion.div
-                  animate={{
-                    y: [0, -20, 0],
-                    rotate: [0, 2, 0],
-                  }}
-                  transition={{
-                    duration: 5,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="absolute -bottom-8 -left-8 bg-black/60 backdrop-blur-2xl border border-white/20 p-5 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-20 group-hover:border-[#39B14A]/50 transition-colors"
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-2xl bg-[#39B14A]/20 flex items-center justify-center">
-                      <div className="w-3 h-3 bg-[#39B14A] rounded-full animate-ping" />
-                    </div>
-                    <div>
-                      <p className="text-[#39B14A] font-black text-2xl tracking-tighter leading-none">
-                        100%
-                      </p>
-                      <p className="text-white/40 text-[9px] uppercase font-black tracking-[0.2em]">
-                        Growth Driven
-                      </p>
-                    </div>
-                  </div>
-                </motion.div> */}
-
-                {/* 5. Decorative Tech Ring */}
                 <div className="absolute -top-10 -right-10 w-32 h-32 border border-white/5 rounded-full animate-[spin_10s_linear_infinite] border-dashed" />
               </div>
-            </motion.div>
+            </motion.div> */}
           </div>
         </div>
       </div>

@@ -59,9 +59,9 @@ export default function OurThoughts() {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-6xl font-black text-black leading-tight"
           >
-            Words from <br /> Our{" "}
+           Built by practitioners. <br /> Run by{" "}
             <span className="bg-gradient-to-r from-[#6900CC] to-[#39B14A] text-transparent bg-clip-text">
-              Founding Heads.
+              people who've done it.
             </span>
           </motion.h2>
         </div>

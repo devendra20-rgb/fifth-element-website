@@ -9,22 +9,41 @@ const homeServices = [
   {
     title: "Branding & Performance",
     icon: <Palette className="w-10 h-10" />,
-    oneLiner: "Build a sharp brand identity, then scale it with high-intent performance campaigns.",
-    microText: ["Strategy", "Creative", "Paid Media (Social & Programmatic)", "Conversion Growth"],
+    oneLiner:
+      "Sharp creative backed by data. We build brand identities that convert through paid social, programmatic, and full-funnel media strategies designed for real Local audiences, not global templates.",
+    microText: [
+      "Paid Social (Meta, TikTok, Snapchat)",
+      "Programmatic & DV360 / The Trade Desk",
+      "DSP",
+      "Full-Funnel Conversion Growth",
+      "Creative Development",
+    ],
     link: "/services#branding",
   },
   {
-    title: "Activations",
+    title: "Activations & Events",
     icon: <Zap className="w-10 h-10" />,
-    oneLiner: "Bring your brand to life with experiences people remember-and share.",
-    microText: ["BTL", "Events", "Retail", "Experiential"],
+    oneLiner:
+      "We turn brand moments into memories. From retail takeovers to immersive experiential concepts, we design activations that earn attention, generate content, and leave a mark long after the day is done.",
+    microText: [
+      "Below the Line (BTL) Campaigns",
+      "Live Events & Brand Launches",
+      "Retail & In-Store Activations",
+      "Experiential & Immersive Concepts",
+    ],
     link: "/services#events",
   },
   {
-    title: "Outdoor Advertising",
+    title: "Outdoor & DOOH",
     icon: <Globe className="w-10 h-10" />,
-    oneLiner: "Own the streets, highways, airports, and key city hotspots with premium OOH.",
-    microText: ["Billboards", "Transit", "Airport", "DOOH"],
+    oneLiner:
+      "Own the streets, the screens, and the commute. We plan and execute OOH and DOOH campaigns that command visibility for Local & Global markets .",
+    microText: [
+      "Classic & Digital Billboards",
+      "Transit & Airport Advertising",
+      "DOOH Programmatic Buying",
+      "Mall & Retail Media",
+    ],
     link: "/services#outdoor",
   },
 ];
@@ -33,7 +52,6 @@ export default function HomeServices() {
   return (
     // Background changed to dark for better gradient contrast
     <section className="relative w-full bg-white py-24 md:py-32 px-6 md:px-12 lg:px-16 overflow-hidden">
-      
       {/* Subtle background glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(105,0,204,0.1)_0%,transparent_70%)] pointer-events-none" />
 
@@ -47,21 +65,47 @@ export default function HomeServices() {
             transition={{ duration: 0.8 }}
             className="text-[#39b14a] uppercase tracking-[0.3em] text-sm md:text-base font-bold mb-6"
           >
-            What We Do Best
+            WHAT WE DO
           </motion.p>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.9, delay: 0.2 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-tight text-black mb-6"
-          >
-            Precision-driven marketing solutions <br className="hidden md:block" />
-            <span className="bg-gradient-to-r from-[#6900cc] to-[#39b14a] bg-clip-text text-transparent">
-              for brands that want both visibility and outcomes.
-            </span>
-          </motion.h2>
+          <div className="text-center mb-16 md:mb-24 px-6">
+            {/* Eyebrow */}
+            {/* <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-[#39b14a] uppercase tracking-[0.3em] text-sm md:text-base font-bold mb-6"
+            >
+              Creating Systems for the Attention Economy
+            </motion.p> */}
+
+            {/* Heading - Added mb-10 for better gap */}
+            <motion.h2
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, delay: 0.2 }}
+              className="text-4xl md:text-5xl lg:text-7xl font-black tracking-tight leading-[1.1] text-black mb-10"
+            >
+              Creating Systems for <br className="hidden md:block" />
+              <span className="bg-gradient-to-r from-[#6900cc] to-[#39b14a] bg-clip-text text-transparent">
+                the Attention Economy
+              </span>
+            </motion.h2>
+
+            {/* Intro Paragraph - Now OUTSIDE of h2 */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-gray-500 text-lg md:text-xl font-medium max-w-3xl mx-auto leading-relaxed"
+            >
+              We combine performance intelligence with creative ambition and we
+              execute across every channel that moves your audience.
+            </motion.p>
+          </div>
         </div>
 
         {/* Cards Grid */}
@@ -81,9 +125,7 @@ export default function HomeServices() {
 
               {/* Icon with Gradient Background */}
               <div className="relative w-16 h-16 bg-gradient-to-br from-[#6900cc] to-[#39b14a] rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-purple-900/20">
-                <div className="text-white">
-                    {service.icon}
-                </div>
+                <div className="text-white">{service.icon}</div>
               </div>
 
               {/* Title */}

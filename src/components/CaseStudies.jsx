@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight, BarChart3, Users, Zap } from "lucide-react";
+import { ArrowUpRight, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 const caseStudies = [
@@ -37,50 +37,63 @@ const caseStudies = [
 
 export default function CaseStudiesSection() {
   return (
-    <section className="bg-white py-24 md:py-32 px-6 overflow-hidden">
-      <div className="max-w-[1400px] mx-auto">
-        {/* Header Section */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
-          <div className="max-w-2xl">
-            <motion.p
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              className="text-[#6900CC] font-bold uppercase tracking-[0.2em] text-sm mb-4"
-            >
-              Proven Results
-            </motion.p>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              className="text-5xl md:text-7xl font-black text-black leading-none"
-            >
-              Case <span className="text-gray-300">Studies.</span>
-            </motion.h2>
-          </div>
+    <section className="relative w-full bg-white py-24 md:py-32 px-6 md:px-12 lg:px-16 overflow-hidden">
+      
+      {/* Background Glow (Services section se matching) */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(105,0,204,0.05)_0%,transparent_70%)] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        
+        {/* Header - Styled like Services Section */}
+        <div className="text-center mb-16 md:mb-20">
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-[#39b14a] uppercase tracking-[0.3em] text-sm md:text-base font-bold mb-6"
+          >
+            Proven Results
+          </motion.p>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.9, delay: 0.2 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-tight text-black mb-8"
+          >
+            Ambitious ideas. <br className="hidden md:block" />
+            <span className="bg-gradient-to-r from-[#6900cc] to-[#39b14a] bg-clip-text text-transparent">
+              Measurable outcomes.
+            </span>
+          </motion.h2>
 
           <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className="text-gray-500 text-lg md:max-w-xs font-medium"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="text-gray-500 text-lg md:text-xl font-medium max-w-3xl mx-auto leading-relaxed"
           >
-            How we turned ambitious ideas into{" "}
-            <span className="text-[#39B14A]">measurable success stories</span>.
+            Every campaign we build is designed to perform, not just look good. 
+            Here&apos;s what that looks like in practice.
           </motion.p>
         </div>
 
-        {/* Bento-style Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 h-full">
-          {/* Large Featured Case - 1 */}
+        {/* Bento Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-10">
+          {/* Main Card */}
           <motion.div
             whileHover={{ y: -10 }}
-            className="md:col-span-8 group relative aspect-[16/10] md:aspect-auto md:h-[600px] overflow-hidden rounded-[2.5rem] bg-gray-100 shadow-sm border border-gray-100"
+            className="md:col-span-8 group relative aspect-[16/10] md:aspect-auto md:h-[650px] overflow-hidden rounded-[2.5rem] bg-[#f8f8f8] border border-gray-100 shadow-sm"
           >
             <img
               src={caseStudies[0].img}
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               alt=""
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-8 md:p-12 flex flex-col justify-end">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-8 md:p-12 flex flex-col justify-end">
               <div className="flex items-center gap-3 mb-4">
                 <span className="px-4 py-1.5 bg-[#6900CC] text-white text-xs font-bold rounded-full uppercase tracking-widest">
                   {caseStudies[0].category}
@@ -94,20 +107,20 @@ export default function CaseStudiesSection() {
               </h3>
               <Link
                 href={`/case-studies/${caseStudies[0].id}`}
-                className="w-fit p-4 bg-white rounded-full hover:bg-[#39B14A] hover:text-white transition-all"
+                className="w-fit p-4 bg-white rounded-full hover:bg-[#39B14A] hover:text-white transition-all shadow-xl"
               >
                 <ArrowUpRight size={28} />
               </Link>
             </div>
           </motion.div>
 
-          {/* Sidebar Cases Stack - 2 & 3 */}
-          <div className="md:col-span-4 flex flex-col gap-6">
+          {/* Side Stack */}
+          <div className="md:col-span-4 flex flex-col gap-8">
             {caseStudies.slice(1).map((study) => (
               <motion.div
                 key={study.id}
                 whileHover={{ y: -5 }}
-                className="flex-1 group relative overflow-hidden rounded-[2rem] bg-gray-50 p-8 border border-gray-100"
+                className="flex-1 group relative overflow-hidden rounded-[2rem] bg-[#f8f8f8] p-8 border border-gray-100 transition-all duration-500 hover:border-[#6900cc]/30"
               >
                 <div className="relative z-10 flex flex-col h-full justify-between">
                   <div>
@@ -138,33 +151,25 @@ export default function CaseStudiesSection() {
                     </Link>
                   </div>
                 </div>
-                {/* Subtle Image Reveal on Hover */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500">
-                  <img
-                    src={study.img}
-                    className="w-full h-full object-cover"
-                    alt=""
-                  />
+                  <img src={study.img} className="w-full h-full object-cover" alt="" />
                 </div>
               </motion.div>
             ))}
 
-            {/* View All Button Card */}
-            {/* View All Button Card - Updated to Premium Gradient Style */}
-            <Link href="/case-studies" className="mt-4 flex justify-center">
-              <button className="group relative inline-flex items-center gap-3 px-12 py-5 bg-gradient-to-r from-[#6900CC] to-[#39B14A] text-white text-lg font-black uppercase tracking-widest rounded-full shadow-[0_10px_40px_rgba(105,0,204,0.4)] transition-all duration-300 overflow-hidden">
-                {/* White Shine Effect on Hover */}
-                <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12" />
-
-                <span className="relative z-10">View All Works</span>
-                <span className="relative z-10 group-hover:translate-x-2 transition-transform duration-300">
-                  →
-                </span>
-
-                {/* Subtle Glow Overlay */}
-                <div className="absolute inset-0 rounded-full blur-xl bg-gradient-to-r from-[#6900CC] to-[#39B14A] opacity-0 group-hover:opacity-40 transition-opacity duration-500" />
-              </button>
-            </Link>
+            {/* CTA Button - Services Section Style */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              className="mt-4"
+            >
+              <Link href="/case-studies">
+                <button className="w-full group relative inline-flex items-center justify-center gap-3 px-8 py-5 bg-gradient-to-r from-[#6900cc] to-[#39b14a] text-white font-bold text-lg rounded-full shadow-xl transition-all duration-300 hover:scale-[1.02] active:scale-95">
+                  View All Work
+                  <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+                </button>
+              </Link>
+            </motion.div>
           </div>
         </div>
       </div>
